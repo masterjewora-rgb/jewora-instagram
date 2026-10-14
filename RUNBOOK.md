@@ -27,9 +27,12 @@ Products never repeat: every posted id is in `posted.csv`, and `plan.py` skips t
 10. Finish with a 2–3 line Hinglish summary: carousel number, format, products (ids + names), and the caption's first line.
 
 ## Caption rules
-- Hinglish (Hindi-English mix), warm, premium, 60–110 words. Write it fresh for this carousel's category/theme — never copy a previous caption.
+- Hinglish (Hindi-English mix), warm, premium, 150–220 words (long caption). Write it fresh for this carousel's category/theme — never copy a previous caption.
 - Line 1: a hook about this category (e.g. earrings → "Kaan mein thoda sa sona, look mein poora royal touch ✨").
-- 1–2 lines on the pieces (materials/occasion: festive, wedding, office, daily wear).
+- A short 2–3 line story/paragraph: the feel of these pieces, kis occasion par pehnein (festive, shaadi, haldi/mehendi, office, date night, daily wear), kis outfit ke saath (saree, lehenga, kurti, western).
+- A mini list of the 5 pieces with an emoji each, e.g. "1️⃣ Classic Ethnic Gold Earrings Combo" ... (names only, no prices).
+- 1–2 styling tips or gifting line (birthday, anniversary, Karva Chauth, Diwali, etc. — match the season).
+- Short trust line: "Premium finish · Skin-friendly · Handpicked by Jewora".
 - "👉 Swipe karke dekho aur apna favourite chuno"
 - Must include: `💬 Comment "PRICE" aur hum turant DM mein price + details bhej denge!`
 - "🚚 Free shipping all over India"
