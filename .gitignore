@@ -1,0 +1,5 @@
+photos/
+plan.json
+current.json
+__pycache__/
+catalog.csv
