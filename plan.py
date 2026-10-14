@@ -9,6 +9,7 @@ import csv, json, os, random, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 csv.field_size_limit(10**9)
+from reel_styles import REEL_ORDER
 
 FORMAT_ORDER = ["classic_band", "polaroid", "magazine_strip", "luxe_border", "masthead_top", "two_tone",
                 "price_tag", "minimal_white", "gallery_frame", "arch", "big_number", "side_spine"]
@@ -99,7 +100,8 @@ def read_ids(name):
 def main():
     catalog = sys.argv[1]
     state = json.load(open(os.path.join(HERE, "state.json")))
-    n = state["carousels_posted"]
+    nc = state.get("carousels_posted", 0); nr = state.get("reels_posted", 0)
+    n = nc + nr                     # total posts so far: drives category rotation + numbering
     exclude = read_ids("posted.csv") | read_ids("missing_photos.txt")
 
     pool = {}
@@ -133,7 +135,8 @@ def main():
 
     cands = pool[cat][:]
     random.Random(n * 7919 + 13).shuffle(cands)
-    plan = {"carousel_number": n + 1, "format": FORMAT_ORDER[n % len(FORMAT_ORDER)], "category": cat,
+    plan = {"carousel_number": n + 1, "format": FORMAT_ORDER[nc % len(FORMAT_ORDER)],
+            "reel_style": REEL_ORDER[nr % len(REEL_ORDER)], "category": cat,
             "remaining_in_category": len(pool[cat]), "remaining_total": sum(len(v) for v in pool.values()),
             "candidates": cands[:60]}
     json.dump(plan, open(os.path.join(HERE, "plan.json"), "w"), indent=1, ensure_ascii=False)

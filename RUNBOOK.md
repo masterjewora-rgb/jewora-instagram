@@ -1,6 +1,6 @@
-# Jewora Instagram Posting — runbook (one carousel per run)
+# Jewora Instagram Posting — runbook (one post per run)
 
-Each run posts ONE 5-slide carousel to Instagram account **jewora_official** (Windsor connector `instagram`, account `17841475914389502`).
+Each run posts ONE post: a 5-slide carousel OR a Reel (see "Reel or carousel?") to Instagram account **jewora_official** (Windsor connector `instagram`, account `17841475914389502`).
 Products never repeat: every posted id is in `posted.csv`, and `plan.py` skips them.
 
 ## Sources
@@ -25,6 +25,19 @@ Products never repeat: every posted id is in `posted.csv`, and `plan.py` skips t
    If it fails because an image URL is not reachable yet, wait 60 s and retry once.
 9. On success: `python3 record.py <media_id or "posted">`, then `git add posted.csv state.json && git commit -m "Posted cNNNN" && git push`.
 10. Finish with a 2–3 line Hinglish summary: carousel number, format, products (ids + names), and the caption's first line.
+
+## Reel or carousel?
+Check the current time in India (Asia/Kolkata). Runs between 12:00–13:59 and 18:00–19:59 IST make a **Reel**; all other runs make a **carousel**.
+(Daily: 10:50 carousel, 12:50 Reel, 15:50 carousel, 18:50 Reel, 20:50 carousel.)
+
+### Reel steps (replace steps 6–9)
+6r. `python3 reel.py ID1 ID2 ID3 ID4 ID5` (style comes from plan.json `reel_style`, rotates through 12 styles; music = random original track in music/).
+    Check 1–2 frames: `ffmpeg -ss 4 -i reels/rNNNN/reel.mp4 -frames:v 1 /tmp/f.jpg` and Read it.
+7r. `git add reels && git commit -m "Reel rNNNN" && git push`, wait ~30 s.
+8r. Windsor `execute_action`: connector `instagram`, account `17841475914389502`, action `create_video_post`,
+    params `{"video_url": "<reel.mp4 url>", "cover_url": "<cover.jpg url>", "share_to_feed": true, "caption": "..."}` (Reel caption: same rules as below).
+    If Instagram rejects the video, fall back: run `python3 make_carousel.py` with the same 5 ids, push, and post it as a carousel instead (then record normally).
+9r. On success `python3 record.py <media_id>` (it knows it was a reel from current.json), push posted.csv + state.json.
 
 ## Caption rules
 - Hinglish (Hindi-English mix), warm, premium, 150–220 words (long caption). Write it fresh for this carousel's category/theme — never copy a previous caption.
