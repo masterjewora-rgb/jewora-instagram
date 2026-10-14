@@ -41,16 +41,15 @@ Check the current time in India (Asia/Kolkata). Runs between 12:00–13:59 and 1
 9r. On success `python3 record.py <media_id>` (it knows it was a reel from current.json), push posted.csv + state.json.
 
 ## Caption rules
-- Hinglish (Hindi-English mix), warm, premium, 150–220 words (long caption). Write it fresh for this carousel's category/theme — never copy a previous caption.
-- Line 1: a hook about this category (e.g. earrings → "Kaan mein thoda sa sona, look mein poora royal touch ✨").
-- A short 2–3 line story/paragraph: the feel of these pieces, kis occasion par pehnein (festive, shaadi, haldi/mehendi, office, date night, daily wear), kis outfit ke saath (saree, lehenga, kurti, western).
-- A mini list of the 5 pieces with an emoji each, e.g. "1️⃣ Classic Ethnic Gold Earrings Combo" ... (names only, no prices).
-- 1–2 styling tips or gifting line (birthday, anniversary, Karva Chauth, Diwali, etc. — match the season).
-- Short trust line: "✨ Premium finish · Handpicked by Jewora".
-- "👉 Swipe karke dekho aur apna favourite chuno"
-- Must include: `💬 Comment "PRICE" aur hum turant DM mein price + details bhej denge!`
-- "🚚 Free shipping all over India"
-- 8–12 hashtags at the end: #Jewora #JeworaJewellery + category/theme tags (#Jhumka #KundanJewellery #FestiveJewellery #IndianJewellery #JewelleryLovers ...).
+- **English only**, warm and premium, **80–120 words** (medium length). Write it fresh for this post's category/theme — never copy a previous caption.
+- Line 1: a short hook about this category (e.g. earrings → "A little gold, a whole lot of glow ✨").
+- 1–2 lines on the pieces: the feel, the occasion (festive, weddings, office, date night, everyday) and what to pair them with (saree, lehenga, kurta, western).
+- A compact list of the 5 pieces, one per line with a number emoji, e.g. "1️⃣ Classic Ethnic Gold Earrings Combo" (names only, no prices).
+- Optional one-line gifting or styling tip that matches the season.
+- "👉 Swipe to find your favourite" (for a Reel: "👀 Watch till the end and pick your favourite")
+- Must include: `💬 Comment "PRICE" and we'll DM you the price + details instantly!`
+- "🚚 Free shipping across India"
+- 8–10 hashtags at the end: #Jewora #JeworaJewellery + category/theme tags (#Jhumka #KundanJewellery #FestiveJewellery #IndianJewellery #JewelleryLovers ...).
 - Do NOT write prices, the website address, or product IDs in the caption.
 
 ## If something blocks
