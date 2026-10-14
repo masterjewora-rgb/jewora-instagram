@@ -31,7 +31,8 @@ Check the current time in India (Asia/Kolkata). Runs between 12:00–13:59 and 1
 (Daily: 10:50 carousel, 12:50 Reel, 15:50 carousel, 18:50 Reel, 20:50 carousel.)
 
 ### Reel steps (replace steps 6–9)
-6r. `python3 reel.py ID1 ID2 ID3 ID4 ID5` (style comes from plan.json `reel_style`, rotates through 12 styles; music = random original track in music/).
+6r. `python3 reel.py ID1 ID2 ID3 ID4 ID5` (style comes from plan.json `reel_style`, rotates through 12 styles; music rotates through music/ — the user's tracks from Drive folder `1tpsn8KwB1vchgkAcREwg49Jo69r3IFpm`).
+    Before rendering: list that Drive folder; for any audio file whose name is not yet in music/ (names are lowercased with _), download it and run `python3 add_music.py <result files>`, then commit music/.
     Check 1–2 frames: `ffmpeg -ss 4 -i reels/rNNNN/reel.mp4 -frames:v 1 /tmp/f.jpg` and Read it.
 7r. `git add reels && git commit -m "Reel rNNNN" && git push`, wait ~30 s.
 8r. Windsor `execute_action`: connector `instagram`, account `17841475914389502`, action `create_video_post`,

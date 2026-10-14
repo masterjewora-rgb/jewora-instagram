@@ -109,7 +109,10 @@ def main():
         return
     style = style or plan["reel_style"]
     label, layout, theme, transition, motion = REEL_STYLES[style]
-    music = music or random.choice(sorted(glob.glob(os.path.join(HERE, "music", "*.*"))))
+    if not music:   # rotate through the user's tracks so consecutive Reels never share a song
+        tracks = sorted(glob.glob(os.path.join(HERE, "music", "*.*"))) or sorted(glob.glob(os.path.join(HERE, "music_generated", "*.*")))
+        st = json.load(open(os.path.join(HERE, "state.json")))
+        music = tracks[st.get("reels_posted", 0) % len(tracks)]
     pages = [page(theme, intro(cs[0], uri_jpg(prods[0]["image"], 800)))] + [page(theme, layout(c)) for c in cs] + [page(theme, outro(cs[0]))]
     folder = f"reels/r{plan['carousel_number']:04d}"
     out_dir = os.path.join(HERE, folder); os.makedirs(out_dir, exist_ok=True)
