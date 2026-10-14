@@ -32,7 +32,7 @@ Products never repeat: every posted id is in `posted.csv`, and `plan.py` skips t
 - A short 2–3 line story/paragraph: the feel of these pieces, kis occasion par pehnein (festive, shaadi, haldi/mehendi, office, date night, daily wear), kis outfit ke saath (saree, lehenga, kurti, western).
 - A mini list of the 5 pieces with an emoji each, e.g. "1️⃣ Classic Ethnic Gold Earrings Combo" ... (names only, no prices).
 - 1–2 styling tips or gifting line (birthday, anniversary, Karva Chauth, Diwali, etc. — match the season).
-- Short trust line: "Premium finish · Skin-friendly · Handpicked by Jewora".
+- Short trust line: "✨ Premium finish · Handpicked by Jewora".
 - "👉 Swipe karke dekho aur apna favourite chuno"
 - Must include: `💬 Comment "PRICE" aur hum turant DM mein price + details bhej denge!`
 - "🚚 Free shipping all over India"
