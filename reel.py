@@ -8,6 +8,7 @@ from PIL import Image
 from playwright.sync_api import sync_playwright
 from formats import BASE_CSS, uri_png, uri_jpg, LOGO
 from reel_styles import REEL_STYLES, THEME_CSS, esc
+import designs
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = "https://raw.githubusercontent.com/masterjewora-rgb/jewora-instagram/main/"
@@ -103,8 +104,9 @@ def main():
     plan, prods = load(a)
     logo = uri_png(Image.open(LOGO))
     cs = ctxs(prods, logo)
+    dcs = [dict(title=c["p"]["title"], eb=c["p"].get("eyebrow", ""), cat=c["cat"], i=c["i"], n=c["n"], img=c["img"], logo=c["logo"]) for c in cs]
     if preview:
-        pages = [page(REEL_STYLES[k][2], REEL_STYLES[k][1](cs[j % len(cs)])) for j, k in enumerate(REEL_STYLES)]
+        pages = [designs.page(designs.slide(k, dcs[j % len(dcs)], H), H) for j, k in enumerate(REEL_STYLES)]
         for p in render(pages, os.path.join(HERE, "reels", "_preview"), "s"): print(p)
         return
     style = style or plan["reel_style"]
@@ -113,7 +115,8 @@ def main():
         tracks = sorted(glob.glob(os.path.join(HERE, "music", "*.*"))) or sorted(glob.glob(os.path.join(HERE, "music_generated", "*.*")))
         st = json.load(open(os.path.join(HERE, "state.json")))
         music = tracks[st.get("reels_posted", 0) % len(tracks)]
-    pages = [page(theme, intro(cs[0], uri_jpg(prods[0]["image"], 800)))] + [page(theme, layout(c)) for c in cs] + [page(theme, outro(cs[0]))]
+    pages = ([designs.page(designs.intro(style, dcs), H)] + [designs.page(designs.slide(style, c, H), H) for c in dcs]
+             + [designs.page(designs.outro(style, dcs[0]), H)])
     folder = f"reels/r{plan['carousel_number']:04d}"
     out_dir = os.path.join(HERE, folder); os.makedirs(out_dir, exist_ok=True)
     frames = render(pages, os.path.join(HERE, "photos", "_frames"))

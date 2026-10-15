@@ -125,3 +125,10 @@ REEL_STYLES = {
     "side_spine":    ("Side Spine",    L_side_spine,    "light", "slideright",  "pan"),
 }
 REEL_ORDER = list(REEL_STYLES)
+
+
+# ---- current Reel styles = the 12 designs in designs.py (offset so a Reel and the next carousel differ) ----
+from designs import D as _D, ORDER as _ORDER
+LEGACY_REEL_STYLES = REEL_STYLES
+REEL_ORDER = _ORDER[6:] + _ORDER[:6]
+REEL_STYLES = {k: (_D[k]["label"], None, None, _D[k]["transition"], _D[k]["motion"]) for k in REEL_ORDER}

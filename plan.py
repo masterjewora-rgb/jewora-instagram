@@ -11,8 +11,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 csv.field_size_limit(10**9)
 from reel_styles import REEL_ORDER
 
-FORMAT_ORDER = ["classic_band", "polaroid", "magazine_strip", "luxe_border", "masthead_top", "two_tone",
-                "price_tag", "minimal_white", "gallery_frame", "arch", "big_number", "side_spine"]
+from designs import ORDER as FORMAT_ORDER   # 12 designs, see designs.py
 
 # category: (display type for eyebrow, keyword regex) — first match wins
 CATEGORIES = [

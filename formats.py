@@ -185,7 +185,7 @@ def f_side_spine(c):
  <div style="margin-top:24px;display:flex;align-items:center;gap:26px"><span class="cta dark">COMMENT “PRICE”</span><span class="pr" style="color:var(--g);font-size:44px">{c['price']}</span></div></div></div>"""
 
 
-FORMATS = {
+LEGACY = {
     "classic_band": ("Classic Band", f_classic_band),
     "masthead_top": ("Masthead Top", f_masthead_top),
     "gallery_frame": ("Gallery Frame", f_gallery_frame),
@@ -201,12 +201,24 @@ FORMATS = {
 }
 
 
+import designs as _designs
+FORMATS = {k: (v["label"], None) for k, v in _designs.D.items()}   # current carousel designs (see designs.py)
+
+
 def page(body):
     return f'<!doctype html><html><head><meta charset="utf-8"><style>{BASE_CSS}</style></head><body>{body}</body></html>'
 
 
+def dctx(p, i, n, logo):
+    """context for designs.py (raw strings; designs escape them)"""
+    eb = p.get("eyebrow", "")
+    return dict(title=p["title"], eb=eb, cat=eb.split("·")[-1].strip() or "Jewellery", i=i, n=n,
+                img=uri_jpg(p["image"], 1200), logo=logo)
+
+
 def render(jobs, out_dir):
-    """jobs: list of (format_key, product, index, total, out_name)"""
+    """jobs: list of (format_key, product, index, total, out_name). Keys from designs.D use the new design system."""
+    import designs
     os.makedirs(out_dir, exist_ok=True)
     logo = uri_png(Image.open(LOGO))
     paths = []
@@ -214,11 +226,14 @@ def render(jobs, out_dir):
         br = pw.chromium.launch()
         pg = br.new_page(viewport={"width": 1080, "height": 1350})
         for key, p, i, n, name in jobs:
-            body = FORMATS[key][1](ctx(p, i, n, logo))
-            L = len(p["title"])
-            k = 1 if L <= 22 else (0.86 if L <= 30 else 0.76)
-            body = re.sub(r'class="(t|ti)" style="font-size:(\d+)px', lambda m: f'class="{m.group(1)}" style="font-size:{int(int(m.group(2))*k)}px', body)
-            pg.set_content(page(body), wait_until="load")
+            if key in designs.D:
+                doc = designs.page(designs.slide(key, dctx(p, i, n, logo), 1350), 1350)
+            else:   # legacy layouts
+                body = LEGACY[key][1](ctx(p, i, n, logo))
+                L = len(p["title"]); k = 1 if L <= 22 else (0.86 if L <= 30 else 0.76)
+                body = re.sub(r'class="(t|ti)" style="font-size:(\d+)px', lambda m: f'class="{m.group(1)}" style="font-size:{int(int(m.group(2))*k)}px', body)
+                doc = page(body)
+            pg.set_content(doc, wait_until="load")
             pg.wait_for_timeout(120)
             out = os.path.join(out_dir, name)
             pg.screenshot(path=out, type="jpeg", quality=92)
