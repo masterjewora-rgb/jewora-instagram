@@ -2,7 +2,7 @@
 
 Replies publicly, in English, to every new top-level comment on jewora_official posts
 (Windsor connector `instagram`, account `17841475914389502`). Never replies twice: handled ids live in `replied.csv`.
-DMs are NOT possible through Windsor — never write "check your DM" / "we've DMed you".
+DMs are sent separately by the "Jewora DM Sender" task (browser on the user's laptop) from `dm_queue.csv`.
 
 ## Steps
 1. `git pull` in this repo (if a pull fails because of local changes: `git stash && git pull && git stash pop`).
@@ -17,20 +17,19 @@ DMs are NOT possible through Windsor — never write "check your DM" / "we've DM
    After each success: `python3 comments.py mark <comment_id>`. For a comment you deliberately skip:
    `python3 comments.py mark <comment_id> --status skipped`.
    If a reply fails with a permission error → stop, do NOT mark it, and report that the Instagram account must be reconnected in Windsor.
-5. `git add replied.csv comments.py REPLIES.md && git commit -m "Comment replies" && git push` (pull --rebase first if push is rejected).
+5. `git add replied.csv dm_queue.csv comments.py REPLIES.md && git commit -m "Comment replies" && git push` (pull --rebase first if push is rejected).
    Do not commit pending.json, comments_raw.json or catalog.csv.
 6. Finish with a 2–3 line Hinglish summary: kitne comments, kya reply gaya (short), kuch skip/error hua to kya.
 
-## Reply rules (English, warm, premium — max ~500 characters)
-- Every reply that mentions products or shopping ends with this trust line (exact wording):
+## Reply rules (English, warm, premium, short — max ~250 characters)
+Product details now go by DM (sent later from the browser by the "Jewora DM Sender" task, see DMS.md), so public replies stay short and do NOT list prices or links.
+- **Price / cost / rate / "how much" / "details" / "send" / "link" / "want this" / "which one" / asks about a piece** (any comment showing buying interest):
+  warm greeting + "Details will be shared soon in your DM 📩" + the trust line on its own line:
   "🚚 Free Shipping | 💵 COD Available | 🔄 7-Day Easy Returns"
-- Use the product names from `caption_names` (short ones the customer saw); fall back to `products[].name`, shortened to ~4–5 words.
-- Prices = `products[].price` (sale price). Never invent a price. Skip a product whose price is empty.
-- **Price / cost / rate / "how much" / "details" / "send" / "link" / "want this" comments** on a post with products:
-  warm greeting (e.g. "Hi there! 💛 Thank you for loving this edit") + list each piece as "1️⃣ Name – ₹price" (one per line) + "Tap the link in our bio to shop 🛍️" + the trust line.
-- **Comment asks about one piece** ("2nd one", "no 3", "the pendant", "last one"): give that piece's name, price AND its `link` (the full jewora.com URL), plus the trust line.
-- **Post with no known products** (`products` empty, e.g. older posts): thank them and say "Tap the link in our bio to shop the full collection 🛍️". No prices.
-- **Compliments** ("beautiful", "😍", "nice"): warm thank-you, one line, invite them to shop via link in bio.
-- **Questions** (COD, delivery time, returns, material, size): answer only what is certain — free shipping across India, Cash on Delivery available, 7-day easy returns; for anything else say "Please DM us and our team will help you right away 💛". Never make up policies.
-- **Spam, abuse, gibberish, promo from other accounts, or not about Jewora**: skip (mark `--status skipped`), don't reply.
-- Never mention DMs being sent by us. No hashtags. 1–2 emojis max besides the number emojis. Don't repeat the exact same wording for every reply in a run — vary the greeting.
+  e.g. "Hi there! 💛 Thank you for loving this edit. Details will be shared soon in your DM 📩
+  🚚 Free Shipping | 💵 COD Available | 🔄 7-Day Easy Returns"
+  Mark these `replied` (default) — that also queues their DM.
+- **Compliments** ("beautiful", "😍", "nice"): warm one-line thank-you + "Comment PRICE and we'll send you the details in DM 📩". Mark `--status thanked` (no DM queued).
+- **Questions** (COD, delivery, returns, material, size): answer what is certain — free shipping across India, Cash on Delivery available, 7-day easy returns — and add "More details will be shared soon in your DM 📩". Mark `replied` (queues a DM).
+- **Spam, abuse, gibberish, promo from other accounts, or not about Jewora**: skip (mark `--status skipped`), don't reply, no DM.
+- No hashtags, no prices, no URLs in public replies. 1–3 emojis. Vary the greeting across replies in a run.
