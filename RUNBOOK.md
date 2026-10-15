@@ -55,4 +55,7 @@ Designs: all 12 carousel formats and 12 Reel styles come from `designs.py` (Roya
 
 ## If something blocks
 - No photos found in the first 60 candidates → append those 60 ids (one per line) to `missing_photos.txt`, run `python3 plan.py catalog.csv --skip <category>` to move to the next category, continue, commit missing_photos.txt with the post, and mention it in the summary.
-- Windsor permission error → stop and report; do not record the products as posted.
+- Windsor error (permission, expired connection, timeout) → retry once after 60 s. If it still fails, fall back to **Pipeboard**:
+  ToolSearch "pipeboard instagram" for its tools; if a Pipeboard tool can publish an Instagram carousel / Reel on jewora_official,
+  post the same media URLs + caption with it, then record normally (pass the media id it returns to record.py).
+  If Pipeboard is not connected or cannot publish either → stop and report both errors; do not record the products as posted.
