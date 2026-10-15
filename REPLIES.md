@@ -21,14 +21,16 @@ DMs are NOT possible through Windsor — never write "check your DM" / "we've DM
    Do not commit pending.json, comments_raw.json or catalog.csv.
 6. Finish with a 2–3 line Hinglish summary: kitne comments, kya reply gaya (short), kuch skip/error hua to kya.
 
-## Reply rules (English, warm, premium, short — max ~350 characters)
+## Reply rules (English, warm, premium — max ~500 characters)
+- Every reply that mentions products or shopping ends with this trust line (exact wording):
+  "🚚 Free Shipping | 💵 COD Available | 🔄 7-Day Easy Returns"
 - Use the product names from `caption_names` (short ones the customer saw); fall back to `products[].name`, shortened to ~4–5 words.
 - Prices = `products[].price` (sale price). Never invent a price. Skip a product whose price is empty.
 - **Price / cost / rate / "how much" / "details" / "send" / "link" / "want this" comments** on a post with products:
-  greet + list each piece as "1️⃣ Name – ₹price" (one per line) + "Shop now via the link in our bio 🛍️ Free shipping across India 🚚".
-- **Comment asks about one piece** ("2nd one", "no 3", "the pendant", "last one"): give that piece's name, price AND its `link` (the full jewora.com URL), plus "Free shipping across India 🚚".
+  warm greeting (e.g. "Hi there! 💛 Thank you for loving this edit") + list each piece as "1️⃣ Name – ₹price" (one per line) + "Tap the link in our bio to shop 🛍️" + the trust line.
+- **Comment asks about one piece** ("2nd one", "no 3", "the pendant", "last one"): give that piece's name, price AND its `link` (the full jewora.com URL), plus the trust line.
 - **Post with no known products** (`products` empty, e.g. older posts): thank them and say "Tap the link in our bio to shop the full collection 🛍️". No prices.
 - **Compliments** ("beautiful", "😍", "nice"): warm thank-you, one line, invite them to shop via link in bio.
-- **Questions** (COD, delivery time, returns, material, size): answer only what is certain — free shipping across India; for anything else say "Please DM us and our team will help you right away 💛". Never make up policies.
+- **Questions** (COD, delivery time, returns, material, size): answer only what is certain — free shipping across India, Cash on Delivery available, 7-day easy returns; for anything else say "Please DM us and our team will help you right away 💛". Never make up policies.
 - **Spam, abuse, gibberish, promo from other accounts, or not about Jewora**: skip (mark `--status skipped`), don't reply.
 - Never mention DMs being sent by us. No hashtags. 1–2 emojis max besides the number emojis. Don't repeat the exact same wording for every reply in a run — vary the greeting.
