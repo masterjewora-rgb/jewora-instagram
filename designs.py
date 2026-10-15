@@ -391,7 +391,7 @@ def sage_card(c):
     return f"""<div style="display:flex;align-items:center;gap:18px;color:#FFF8EC">{logo(c, 72, "#FFF8EC", "#FFF8EC")}
   <div style="font-size:21px;letter-spacing:.32em">{esc(c['eb']).upper()}</div></div>
  <div style="position:relative;margin:30px 0 28px">
-  <div style="position:absolute;left:50%;top:-60px;width:860px;height:860px;margin-left:-430px;border-radius:50%;background:radial-gradient(circle,#F6E2B6,#E7BE78)"></div>
+  <div style="position:absolute;left:50%;top:-22px;width:860px;height:860px;margin-left:-430px;border-radius:50%;background:radial-gradient(circle,#F6E2B6,#E7BE78)"></div>
   {photo(c, 780, "position:relative;border-radius:30px;box-shadow:0 34px 60px rgba(30,50,35,.35)")}</div>
  <div class="one" style="font-family:'Lora';font-style:italic;font-weight:600;color:#FFF8EC;margin-top:30px;font-size:{fit(t,58,.5)}px;margin-bottom:24px">{esc(t)}</div>
  {_sage_cta()}"""
