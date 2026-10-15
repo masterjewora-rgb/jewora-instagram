@@ -54,5 +54,5 @@ Designs: all 12 carousel formats and 12 Reel styles come from `designs.py` (Roya
 - Do NOT write prices, the website address, or product IDs in the caption.
 
 ## If something blocks
-- No photos found in the first 60 candidates → run `python3 plan.py catalog.csv` again after appending those ids to a temporary skip (or pick the next category by bumping nothing) and report it.
+- No photos found in the first 60 candidates → append those 60 ids (one per line) to `missing_photos.txt`, run `python3 plan.py catalog.csv --skip <category>` to move to the next category, continue, commit missing_photos.txt with the post, and mention it in the summary.
 - Windsor permission error → stop and report; do not record the products as posted.

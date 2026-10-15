@@ -97,7 +97,11 @@ def read_ids(name):
 
 
 def main():
-    catalog = sys.argv[1]
+    args = sys.argv[1:]
+    skip = set()
+    if "--skip" in args:   # categories whose photos are missing in Drive this run, e.g. --skip rings,anklet
+        i = args.index("--skip"); skip = set(args[i + 1].split(",")); del args[i:i + 2]
+    catalog = args[0]
     state = json.load(open(os.path.join(HERE, "state.json")))
     nc = state.get("carousels_posted", 0); nr = state.get("reels_posted", 0)
     n = nc + nr                     # total posts so far: drives category rotation + numbering
@@ -126,7 +130,7 @@ def main():
     # category: follow the cycle, skip ones with too few products left
     start = n % len(CATEGORY_CYCLE)
     order = CATEGORY_CYCLE[start:] + CATEGORY_CYCLE[:start] + ["other"]
-    cat = next((c for c in order if len(pool.get(c, [])) >= 8), None)
+    cat = next((c for c in order if c not in skip and len(pool.get(c, [])) >= 8), None)
     if cat is None:
         cat = max(pool, key=lambda c: len(pool[c])) if pool else None
     if cat is None:
