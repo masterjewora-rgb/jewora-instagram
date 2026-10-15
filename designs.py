@@ -236,10 +236,151 @@ def rose_card(c):
  {_rose_cta()}"""
 
 
+# ------------------------------------------------------------------ photo treatments (v2: no more "everything in a box")
+FADE = ("-webkit-mask-image:linear-gradient(90deg,#0000,#000 {e}%,#000 {f}%,#0000),linear-gradient(#0000,#000 {e}%,#000 {f}%,#0000);"
+        "-webkit-mask-composite:source-in;mask-composite:intersect")
+
+def faded(c, size, edge=5, style=""):
+    """photo whose edges dissolve into the background (product stays sharp in the middle)."""
+    return f'<div style="width:{size}px;height:{size}px;flex:none;{FADE.format(e=edge, f=100-edge)};{style}"><img src="{c["img"]}" style="width:100%;height:100%;object-fit:contain;display:block"></div>'
+
+def band(c, h, style="", vfade=False):
+    """edge-to-edge band: the whole square photo sits sharp in the middle, the sides are a blurred copy of the same photo."""
+    vm = ";-webkit-mask-image:linear-gradient(#0000,#000 7%,#000 93%,#0000)" if vfade else ""
+    side = "-webkit-mask-image:linear-gradient(90deg,#0000,#000 3%,#000 97%,#0000)"
+    return (f'<div style="position:relative;width:1080px;height:{h}px;overflow:hidden;flex:none{vm};{style}">'
+            f'<img src="{c["img"]}" style="position:absolute;left:-60px;top:-60px;width:1200px;height:{h+120}px;object-fit:cover;filter:blur(34px) saturate(1.05) brightness(.92)">'
+            f'<img src="{c["img"]}" style="position:relative;display:block;width:{h}px;height:{h}px;margin:0 auto;object-fit:contain;{side}"></div>')
+
+
+def royal_card(c):
+    t = c["title"]
+    return f"""{band(c, 960, "border-top:3px solid #C9A46C;border-bottom:3px solid #C9A46C")}
+ <div style="display:flex;align-items:center;gap:18px;margin:24px 0 6px">{logo(c, 58)}
+  <div style="font-size:21px;letter-spacing:.32em;color:#C9A46C">{esc(c['eb']).upper()} · {c['i']:02d}/{c['n']:02d}</div></div>
+ <div class="one" style="font-family:'GFS Baskerville';font-variant:small-caps;color:#F6EBDD;font-size:{fit(t,58,.58)}px;margin-bottom:18px">{esc(t)}</div>
+ {_royal_cta()}"""
+
+
+def maroon_card(c):
+    t = c["title"]
+    return f"""<div style="display:flex;align-items:center;gap:26px;color:#E2B866">
+  <div style="width:150px;height:2px;background:linear-gradient(90deg,#0000,#E2B866)"></div>
+  <div style="font-family:'Lora';font-style:italic;font-size:38px">{esc(c['cat'])} Utsav</div>
+  <div style="width:150px;height:2px;background:linear-gradient(90deg,#E2B866,#0000)"></div></div>
+ {photo(c, 840, "border-radius:34px;margin:30px 0 26px;box-shadow:0 0 0 5px #E2B866,0 0 0 14px rgba(226,184,102,.25),0 0 70px rgba(246,217,142,.35)")}
+ <div class="one" style="font-family:'Lora';font-style:italic;font-weight:600;color:#F6D98E;font-size:{fit(t,60,.5)}px">{esc(t)}</div>
+ <div style="font-size:20px;letter-spacing:.36em;color:#E9B8A6;margin:8px 0 24px">JEWORA · {c['i']:02d} OF {c['n']:02d}</div>
+ {_maroon_cta()}"""
+
+
+def blush_card(c):
+    t, cat = c["title"], c["cat"].upper()
+    rot = -3 if c["i"] % 2 else 3
+    return f"""<div style="font-family:'Inter';font-weight:900;font-size:{fit(cat,178,.72,1000)}px;line-height:.9;letter-spacing:-.01em;
+   color:transparent;-webkit-text-stroke:2.5px #C98473;position:relative;z-index:0">{esc(cat)}</div>
+ <div style="position:relative;margin:-10px 0 40px;z-index:1">
+  <div style="position:absolute;inset:0;background:#E9B3A5;transform:rotate({-rot*2}deg) translate({rot*-10}px,14px)"></div>
+  {photo(c, 760, f"position:relative;transform:rotate({rot}deg);box-shadow:0 28px 50px rgba(110,50,40,.28)")}</div>
+ <div class="one" style="font-family:'Lora';font-style:italic;color:#4A2A25;font-size:{fit(t,56,.5)}px;margin-bottom:22px">{esc(t)}</div>
+ {_blush_cta()}"""
+
+
+def midnight_card(c):
+    t = c["title"]
+    return f"""<div style="font-family:'GFS Baskerville';font-size:44px;letter-spacing:.6em;color:#D4A95C;margin-right:-.6em">JEWORA</div>
+ <div style="font-size:19px;letter-spacing:.4em;color:#8E8574;margin:10px 0 6px">{esc(c['eb']).upper()}</div>
+ {band(c, 940, vfade=True)}
+ <div class="one" style="font-family:'Lora';font-style:italic;font-weight:500;font-size:{fit(t,62,.5)}px;
+   background:linear-gradient(90deg,#B98B45,#FFE7B0,#B98B45);-webkit-background-clip:text;color:transparent;padding-bottom:6px">{esc(t)}</div>
+ <div style="margin-top:20px">{_midnight_cta()}</div>"""
+
+
+def temple_card(c):
+    t = c["title"]
+    return f"""<div style="width:960px;padding:30px 0 0;border-radius:480px 480px 0 0;background:linear-gradient(180deg,#C9674C,#A64A33);
+   display:flex;flex-direction:column;align-items:center;gap:16px;overflow:hidden">
+  {logo(c, 90, "#FFF6EA", "#FFF6EA")}
+  <div style="font-size:21px;letter-spacing:.34em;color:#FFE3CF">{esc(c['eb']).upper()}</div>
+  {photo(c, 860, "margin-top:4px")}</div>
+ <div class="one" style="font-family:'GFS Baskerville';font-variant:small-caps;color:#6E2B1D;font-size:{fit(t,58,.58)}px;margin:24px 0 20px">{esc(t)}</div>
+ {_temple_cta()}"""
+
+
+def pop_card(c):
+    t = c["title"]
+    rot = 3 if c["i"] % 2 else -3
+    return f"""<div style="display:flex;align-items:center;width:900px;justify-content:space-between">
+  <div style="background:#111;color:#FFE07A;font-family:'Inter';font-weight:900;font-size:34px;padding:12px 24px;transform:rotate(-3deg)">NEW DROP · {esc(c['cat']).upper()}</div>
+  <div style="width:96px;height:96px;border-radius:50%;background:#fff;border:5px solid #111;display:grid;place-items:center;
+    font-family:'Inter';font-weight:900;font-size:40px;color:#111">{c['i']:02d}</div></div>
+ <div style="position:relative;margin:26px 0 34px">
+  <div style="position:absolute;left:-70px;top:-50px;width:380px;height:380px;border-radius:50%;background:#FF5C93"></div>
+  <div style="position:absolute;right:-60px;bottom:-40px;width:300px;height:300px;border-radius:50%;background:#6FD6C3"></div>
+  {photo(c, 800, f"position:relative;border-radius:36px;transform:rotate({rot}deg);box-shadow:16px 16px 0 #111")}</div>
+ <div class="one" style="font-family:'Inter';font-weight:800;color:#111;font-size:{fit(t,54,.56)}px;margin-bottom:28px">{esc(t)}</div>
+ {_pop_cta()}"""
+
+
+def glass_card(c):
+    t = c["title"]
+    return f"""<div style="display:flex;align-items:center;gap:18px;margin-bottom:26px">{logo(c, 70, "#fff", "#D9CCF5")}
+  <div style="font-size:21px;letter-spacing:.3em;color:#6E5A9C">{esc(c['eb']).upper()}</div></div>
+ {photo(c, 820, "border-radius:48px;box-shadow:0 40px 80px rgba(91,63,160,.25)")}
+ <div style="margin:26px 0 28px;position:relative;background:rgba(255,255,255,.6);border:2px solid #fff;border-radius:999px;padding:18px 44px;
+   box-shadow:0 14px 30px rgba(91,63,160,.15)"><div class="one" style="font-family:'Lora';font-weight:600;color:#3B2A5C;font-size:{fit(t,48,.52,780)}px;max-width:780px">{esc(t)}</div></div>
+ {_glass_cta()}"""
+
+
+def navy_card(c):
+    t = c["title"]
+    return f"""<div style="display:flex;align-items:center;justify-content:space-between;width:900px;color:#F4EFE6;margin-bottom:22px">
+  <div style="display:flex;align-items:center;gap:20px">{logo(c, 80)}<div style="font-size:21px;letter-spacing:.3em">{esc(c['eb']).upper()}</div></div>
+  <div style="font-family:'GFS Baskerville';font-size:84px;color:#E3B85A;line-height:1">{c['i']:02d}</div></div>
+ {band(c, 900, "box-shadow:0 30px 60px rgba(0,0,0,.3)")}
+ <div class="one" style="font-family:'GFS Baskerville';color:#14213D;font-size:{fit(t,58,.5)}px;margin:26px 0 22px">{esc(t)}</div>
+ {_navy_cta()}"""
+
+
+def stamp_card(c):
+    t = c["title"]
+    return f"""<div style="display:flex;align-items:center;gap:20px;color:#F3E9D2">{logo(c, 80)}
+  <div style="font-size:22px;letter-spacing:.32em">{esc(c['eb']).upper()}</div></div>
+ {photo(c, 800, f"margin:26px 0 30px;transform:rotate({-2 if c['i'] % 2 else 2}deg);box-shadow:0 30px 60px rgba(0,0,0,.45)")}
+ <div style="display:flex;align-items:center;justify-content:space-between;width:900px;gap:30px">
+  <div style="flex:1;min-width:0;color:#F3E9D2"><div style="font-size:22px;letter-spacing:.3em;color:#F2B84B">NO. {c['i']:02d} / {c['n']:02d}</div>
+   <div style="font-family:'Lora';font-style:italic;font-size:{min(56, fit(t,56,.5,1040))}px;line-height:1.12;margin-top:10px">{esc(t)}</div></div>
+  {_stamp_cta(0.92)}</div>"""
+
+
+def news_card(c):
+    t = c["title"]
+    rule = '<div style="width:940px;height:6px;border-top:3px solid #111;border-bottom:1px solid #111"></div>'
+    return f"""{rule}
+ <div style="font-family:'Caladea';font-weight:700;font-size:84px;color:#111;line-height:1.05;margin:6px 0 2px">The Jewora Edit</div>
+ <div style="display:flex;justify-content:space-between;width:940px;font-family:'Caladea';font-size:22px;letter-spacing:.14em;color:#333">
+  <span>NO. {c['i']:02d}</span><span>{esc(c['cat']).upper()} SPECIAL</span><span>FREE SHIPPING</span></div>
+ {rule}
+ {photo(c, 820, "margin:24px 0 16px;filter:contrast(1.03)")}
+ <div class="one" style="font-family:'Caladea';font-weight:700;color:#111;font-size:{fit(t,58,.5)}px;margin-bottom:20px">{esc(t)}</div>
+ {_news_cta()}"""
+
+
+def rose_card(c):
+    t = c["title"]
+    return f"""<div style="display:flex;align-items:center;gap:26px">
+  <div style="width:120px;height:1px;background:#A9606C"></div><img src="{c['logo']}" style="height:84px">
+  <div style="width:120px;height:1px;background:#A9606C"></div></div>
+ {photo(c, 860, "border-radius:18px;margin:26px 0 24px;box-shadow:0 30px 70px rgba(90,40,50,.28)")}
+ <div class="one" style="font-family:'Poppins';font-weight:400;text-transform:uppercase;letter-spacing:.16em;color:#4A2C30;font-size:{fit(t,40,.78)}px">{esc(t)}</div>
+ <div style="font-size:19px;letter-spacing:.38em;color:#8A5A60;margin:10px 0 24px">{c['i']:02d} — {c['n']:02d}</div>
+ {_rose_cta()}"""
+
+
 D = {
     "royal_emerald": dict(label="Royal Emerald", card=royal_card, cta=_royal_cta, fg="#F6EBDD", acc="#C9A46C", tf="'GFS Baskerville'",
         bg="radial-gradient(ellipse 90% 60% at 50% 42%,#3D5A3C,#24331F 62%,#17211A)",
-        deco=lambda H: '<div style="position:absolute;inset:26px;border:1.5px solid rgba(201,164,108,.55)"></div>',
+        deco=lambda H: '',
         transition="fade", motion="alt"),
     "maroon_festive": dict(label="Maroon Festive", card=maroon_card, cta=_maroon_cta, fg="#F6D98E", acc="#E2B866", tf="'Lora';font-style:italic",
         bg="radial-gradient(rgba(232,190,110,.16) 2px,transparent 2.6px) 0 0/36px 36px,radial-gradient(ellipse at 50% 40%,#7A1527,#4A0B17)",
@@ -273,20 +414,24 @@ D = {
     "newspaper": dict(label="Newspaper Bold", card=news_card, cta=_news_cta, fg="#111", acc="#C8102E", tf="'Caladea';font-weight:700",
         bg="#F4EDDF", deco=lambda H: '', transition="slideright", motion="pan"),
     "rose_minimal": dict(label="Rose Minimal", card=rose_card, cta=_rose_cta, fg="#5A3A3E", acc="#C98A8E", tf="'Poppins';font-weight:300",
-        bg="#FFFFFF", deco=lambda H: '<div style="position:absolute;inset:40px;border:1px solid #E6C3C3"></div>',
+        bg="#FFFFFF", photo_bg="rgba(255,248,246,.72)", deco=lambda H: '',
         transition="fadewhite", motion="zin"),
 }
 ORDER = list(D)
 
 
-def canvas(key, H, stage_html, top):
+def canvas(key, H, stage_html, top, c=None):
     d = D[key]
     foot = ""
+    pb = ""
+    if c is not None and d.get("photo_bg"):   # soft, blurred copy of the product photo as the whole background
+        pb = (f'<img src="{c["img"]}" style="position:absolute;left:-120px;top:-120px;width:1320px;height:{H+240}px;object-fit:cover;filter:blur(46px)">'
+              f'<div style="position:absolute;inset:0;background:{d["photo_bg"]}"></div>')
     if H > 1350:   # Reel: low-priority brand line in the area Instagram's caption UI may cover
         foot = (f'<div style="position:absolute;left:0;right:0;top:1640px;text-align:center;color:{d["acc"]}">'
                 f'<div style="font-size:26px;letter-spacing:.38em">FREE SHIPPING ACROSS INDIA</div>'
                 f'<div style="font-size:24px;letter-spacing:.2em;margin-top:14px;color:{d["fg"]};opacity:.7">@jewora_official</div></div>')
-    return (f'<div class="cv" style="height:{H}px;background:{d["bg"]};color:{d["fg"]}">{d["deco"](H)}'
+    return (f'<div class="cv" style="height:{H}px;background:{d["bg"]};color:{d["fg"]}">{pb}{d["deco"](H)}'
             f'<div class="stage" style="top:{top}px">{stage_html}</div>{foot}</div>')
 
 
@@ -297,7 +442,7 @@ def page(body, H):
 
 def slide(key, c, H=1350):
     """one product slide. Reels (H=1920) put the stage at y=215 (Instagram safe zone)."""
-    return canvas(key, H, D[key]["card"](c), 0 if H == 1350 else 215)
+    return canvas(key, H, D[key]["card"](c), 0 if H == 1350 else 215, c)
 
 
 def intro(key, cs, H=1920):
@@ -308,13 +453,13 @@ def intro(key, cs, H=1920):
  <div style="font-family:{d['tf']};font-size:118px;line-height:1.02;text-align:center;margin-top:18px">The {esc(c['cat'])}<br>Edit</div>
  <div style="display:flex;gap:16px;margin-top:56px">{thumbs}</div>
  <div style="font-size:26px;letter-spacing:.3em;margin-top:40px;opacity:.85">{len(cs)} HANDPICKED PIECES</div>"""
-    return canvas(key, H, st, 215)
+    return canvas(key, H, st, 215, c)
 
 
 def outro(key, c, H=1920):
     d = D[key]
     st = f"""{logo(c, 170, "#F6EBDD", d['acc'])}
- <div style="font-family:{d['tf']};font-size:84px;margin:44px 0 50px;text-align:center">Kaunsa pasand aaya?</div>
+ <div style="font-family:{d['tf']};font-size:76px;margin:44px 40px 50px;text-align:center;line-height:1.1">Which one is your favourite?</div>
  {d['cta'](1.05)}
- <div style="font-size:30px;letter-spacing:.06em;margin-top:46px;text-align:center;line-height:1.5;opacity:.9">Comment karo, hum turant DM mein<br>price + details bhejenge</div>"""
+ <div style="font-size:30px;letter-spacing:.06em;margin-top:46px;text-align:center;line-height:1.5;opacity:.9">Comment below and we'll DM you<br>the price + details instantly</div>"""
     return canvas(key, H, st, 215)
