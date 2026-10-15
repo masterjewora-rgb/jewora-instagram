@@ -2,7 +2,7 @@
 
 Replies publicly, in English, to every new top-level comment on jewora_official posts
 (Windsor connector `instagram`, account `17841475914389502`). Never replies twice: handled ids live in `replied.csv`.
-DMs are sent separately by the "Jewora DM Sender" task (browser on the user's laptop) from `dm_queue.csv`.
+DMs are sent separately by the "Jewora Inbox Engine" task (browser on the user's laptop) from `dm_queue.csv`.
 
 ## Steps
 1. `git pull` in this repo (if a pull fails because of local changes: `git stash && git pull && git stash pop`).
@@ -22,7 +22,7 @@ DMs are sent separately by the "Jewora DM Sender" task (browser on the user's la
 6. Finish with a 2–3 line Hinglish summary: kitne comments, kya reply gaya (short), kuch skip/error hua to kya.
 
 ## Reply rules (English, warm, premium, short — max ~250 characters)
-Product details now go by DM (sent later from the browser by the "Jewora DM Sender" task, see DMS.md), so public replies stay short and do NOT list prices or links.
+Product details now go by DM (sent later from the browser by the "Jewora Inbox Engine" task, see INBOX.md), so public replies stay short and do NOT list prices or links.
 - **Price / cost / rate / "how much" / "details" / "send" / "link" / "want this" / "which one" / asks about a piece** (any comment showing buying interest):
   warm greeting + "Details will be shared soon in your DM 📩" + the trust line on its own line:
   "🚚 Free Shipping | 💵 COD Available | 🔄 7-Day Easy Returns"

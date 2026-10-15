@@ -5,6 +5,8 @@ Usage:
       -> writes pending.json: one entry per new comment, with the post's products (name, price, link)
   python3 comments.py mark COMMENT_ID [COMMENT_ID ...] [--status replied|skipped]
       -> appends to replied.csv so the comment is never handled again; "replied" ones are also queued in dm_queue.csv
+  python3 comments.py find WORDS...                  # search catalog by product name -> id | name | price | link
+  python3 comments.py media MEDIA_ID                 # products of one of our Instagram posts
   python3 comments.py dm-todo                       # DMs still to send -> dm_todo.json (needs catalog.csv)
   python3 comments.py dm-sent COMMENT_ID [...] [--status sent|failed|expired]
 
@@ -157,6 +159,42 @@ def dm_todo():
         print(f"- {x['comment_id']} | {x['comment_text']!r} | {x['permalink']} | {len(x['products'])} products")
 
 
+def _catalog():
+    cat = {}
+    cp = os.path.join(HERE, "catalog.csv")
+    for r in csv.DictReader(open(cp, encoding="utf-8")):
+        cat[r["id"]] = r
+    return cat
+
+
+def find(query, limit=8):
+    """Search the catalog by product name words (for Messenger / FB / DM questions). Prints id | name | price | link."""
+    import re
+    words = [w for w in re.findall(r"[a-z0-9]+", query.lower()) if len(w) > 2]
+    scored = []
+    for r in _catalog().values():
+        t = r.get("title", "").lower()
+        sc = sum(1 for w in words if w in t)
+        if sc and r.get("availability") == "in stock":
+            scored.append((sc, -len(t), r))
+    scored.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    for sc, _, r in scored[:limit]:
+        print(f"{r['id']} | {r['title']} | {price_of(r)} | {r['link']}")
+    if not scored:
+        print("no match")
+
+
+def media_products(media_id):
+    """Products of one of our posts (by Instagram media_id), as posted by the posting task."""
+    cat = _catalog()
+    ids = [r["id"] for r in csv.DictReader(open(os.path.join(HERE, "posted.csv"), encoding="utf-8")) if r["media_id"] == media_id]
+    for n, pid in enumerate(ids, 1):
+        r = cat.get(pid, {})
+        print(f"{n}. {pid} | {r.get('title','')} | {price_of(r)} | {r.get('link','')}")
+    if not ids:
+        print("unknown media")
+
+
 def dm_sent(ids, status):
     p = os.path.join(HERE, "dm_sent.csv")
     new = not os.path.exists(p)
@@ -179,6 +217,10 @@ if __name__ == "__main__":
         if "--status" in args:
             k = args.index("--status"); status = args[k + 1]; args = args[:k] + args[k + 2:]
         mark(args, status)
+    elif sys.argv[1] == "find":
+        find(" ".join(sys.argv[2:]))
+    elif sys.argv[1] == "media":
+        media_products(sys.argv[2])
     elif sys.argv[1] == "dm-todo":
         dm_todo()
     elif sys.argv[1] == "dm-sent":
