@@ -377,6 +377,26 @@ def rose_card(c):
  {_rose_cta()}"""
 
 
+LEAF = ('<svg width="{w}" height="{h}" viewBox="0 0 60 200" style="{st}"><path d="M30 200 C30 140 30 80 30 0" stroke="{c}" stroke-width="2" fill="none"/>'
+        + "".join(f'<path d="M30 {y} C{10 if k%2 else 50} {y-14} {4 if k%2 else 56} {y-34} {30} {y-40}" stroke="{{c}}" stroke-width="2" fill="{{f}}"/>'
+                  for k, y in enumerate(range(190, 30, -26))) + '</svg>')
+
+def _sage_cta(s=1):
+    return (f'<div class="cta" style="font-size:{58*s:.0f}px;background:#FFF8EC;color:#2F4A3A;border-radius:999px;padding:32px 66px;'
+            f'box-shadow:0 0 0 4px #2F4A3A,0 18px 36px rgba(30,50,35,.35)">{bubble("#FFF8EC")}{CTA_TXT}</div>')
+
+def sage_card(c):
+    t = c["title"]
+    leaf = lambda st: LEAF.format(w=90, h=300, st=st, c="#FFF8EC", f="rgba(255,248,236,.18)").replace("{c}", "#FFF8EC").replace("{f}", "rgba(255,248,236,.18)")
+    return f"""<div style="display:flex;align-items:center;gap:18px;color:#FFF8EC">{logo(c, 72, "#FFF8EC", "#FFF8EC")}
+  <div style="font-size:21px;letter-spacing:.32em">{esc(c['eb']).upper()}</div></div>
+ <div style="position:relative;margin:30px 0 28px">
+  <div style="position:absolute;left:50%;top:-60px;width:860px;height:860px;margin-left:-430px;border-radius:50%;background:radial-gradient(circle,#F6E2B6,#E7BE78)"></div>
+  {photo(c, 780, "position:relative;border-radius:30px;box-shadow:0 34px 60px rgba(30,50,35,.35)")}</div>
+ <div class="one" style="font-family:'Lora';font-style:italic;font-weight:600;color:#FFF8EC;margin-top:30px;font-size:{fit(t,58,.5)}px;margin-bottom:24px">{esc(t)}</div>
+ {_sage_cta()}"""
+
+
 D = {
     "royal_emerald": dict(label="Royal Emerald", card=royal_card, cta=_royal_cta, fg="#F6EBDD", acc="#C9A46C", tf="'GFS Baskerville'",
         bg="radial-gradient(ellipse 90% 60% at 50% 42%,#3D5A3C,#24331F 62%,#17211A)",
@@ -390,11 +410,8 @@ D = {
     "midnight_gold": dict(label="Midnight Gold", card=midnight_card, cta=_midnight_cta, fg="#F3E2BE", acc="#D4A95C", tf="'Lora';font-style:italic",
         bg="radial-gradient(ellipse 70% 40% at 50% 30%,rgba(212,169,92,.22),transparent 70%),#0C0C0E",
         deco=lambda H: '', transition="fadeblack", motion="zin"),
-    "ivory_temple": dict(label="Ivory Temple Arch", card=temple_card, cta=_temple_cta, fg="#6E2B1D", acc="#B5543C", tf="'GFS Baskerville'",
-        bg="linear-gradient(180deg,#FBF4E8,#F1E4CF)",
-        deco=lambda H: '<div style="position:absolute;left:30px;top:0;bottom:0;width:6px;border-left:2px solid #D9A58F;border-right:2px solid #D9A58F"></div>'
-                       '<div style="position:absolute;right:30px;top:0;bottom:0;width:6px;border-left:2px solid #D9A58F;border-right:2px solid #D9A58F"></div>',
-        transition="dissolve", motion="zout"),
+    "sage_botanical": dict(label="Sage Botanical", card=sage_card, cta=_sage_cta, fg="#FFF8EC", acc="#F3D9A4", tf="'Lora';font-style:italic",
+        bg="radial-gradient(ellipse at 50% 30%,#9DB09A,#6F8A73 60%,#55705B)", deco=lambda H: '', transition="dissolve", motion="zout"),
     "pop_bold": dict(label="Pop Bold", card=pop_card, cta=_pop_cta, fg="#111", acc="#FF5C93", tf="'Inter';font-weight:900",
         bg="linear-gradient(#0000 calc(100% - 2px),rgba(0,0,0,.07) 0) 0 0/60px 60px,linear-gradient(90deg,#0000 calc(100% - 2px),rgba(0,0,0,.07) 0) 0 0/60px 60px,#FFE07A",
         deco=lambda H: '', transition="slideup", motion="alt"),
