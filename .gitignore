@@ -4,3 +4,5 @@ current.json
 __pycache__/
 catalog.csv
 reels/_preview/
+pending.json
+comments_raw.json
