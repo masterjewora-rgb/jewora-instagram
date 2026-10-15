@@ -21,9 +21,9 @@ def head(c, top=200):
  <div class="eb" style="font-size:22px;color:var(--acc)">{esc(c['cat'])} · {c['i']:02d} / {c['n']:02d}</div></div>"""
 
 
-def cta(dark_btn=False, size=24):
+def cta(dark_btn=False, size=44):
     cls = "cta dark" if dark_btn else "cta"
-    return f'<span class="{cls}" style="font-size:{size}px;padding:18px 34px">COMMENT “PRICE”</span>'
+    return f'<span class="{cls}" style="font-size:{size}px;padding:28px 60px;letter-spacing:.12em">COMMENT “PRICE”</span>'
 
 
 def text_block(c, top, align="center", dark_btn=False, italic=False):
@@ -75,7 +75,7 @@ def L_big_number(c):
 <div style="position:absolute;left:70px;right:70px;top:1500px;display:flex;align-items:center;gap:28px;color:var(--fg)">
  <div style="font-family:var(--ital);font-size:150px;line-height:.8;color:var(--acc)">{c['i']:02d}</div>
  <div style="border-left:2px solid var(--acc);padding-left:26px;min-width:0"><div class="t" style="font-size:{_title(p,50,42)}px">{esc(p['title'])}</div>
- <div style="margin-top:14px">{cta(size=19)}</div></div></div>"""
+ <div style="margin-top:14px">{cta(size=36)}</div></div></div>"""
 
 def L_split_color(c):
     return f'<div style="position:absolute;left:0;right:0;top:0;height:880px;background:#2F402F"></div>' \
@@ -91,7 +91,7 @@ def L_minimal_white(c):
 <div style="position:absolute;left:80px;right:80px;top:1420px;text-align:center;color:var(--fg)">
  <div class="t" style="font-size:{_title(p,56,46)}px">{esc(p['title'])}</div>
  <div style="height:1px;background:var(--acc);margin:18px 200px"></div>
- <div class="sp" style="font-size:20px">Comment <b>“PRICE”</b> to order</div></div>"""
+ <div style="margin-top:10px">{cta(dark_btn=True)}</div></div>"""
 
 def L_luxe_border(c):
     return head(c) + f'<div style="position:absolute;left:80px;top:410px;width:920px;height:920px;border:2px solid var(--acc);outline:2px solid var(--acc);outline-offset:14px">' \

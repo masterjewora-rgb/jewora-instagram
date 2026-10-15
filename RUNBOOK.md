@@ -27,8 +27,9 @@ Products never repeat: every posted id is in `posted.csv`, and `plan.py` skips t
 10. Finish with a 2–3 line Hinglish summary: carousel number, format, products (ids + names), and the caption's first line.
 
 ## Reel or carousel?
-Check the current time in India (Asia/Kolkata). Runs between 12:00–13:59 and 18:00–19:59 IST make a **Reel**; all other runs make a **carousel**.
-(Daily: 10:50 carousel, 12:50 Reel, 15:50 carousel, 18:50 Reel, 20:50 carousel.)
+Check the current time in India (Asia/Kolkata). Runs in the **10:xx** or **15:xx** IST hour make a **carousel**; every other run makes a **Reel**.
+(Daily 10 posts = 8 Reels + 2 carousels: 09:50 Reel, 10:50 carousel, 11:50 Reel, 12:50 Reel, 13:50 Reel, 15:50 carousel, 17:50 Reel, 18:50 Reel, 19:50 Reel, 20:50 Reel.)
+The COMMENT "PRICE" button is drawn big on every slide/frame (formats.py `.cta`, reel_styles.py `cta()`); keep it big when changing layouts.
 
 ### Reel steps (replace steps 6–9)
 6r. `python3 reel.py ID1 ID2 ID3 ID4 ID5` (style comes from plan.json `reel_style`, rotates through 12 styles; music rotates through music/ — the user's tracks from Drive folder `1tpsn8KwB1vchgkAcREwg49Jo69r3IFpm`).

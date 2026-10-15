@@ -20,7 +20,8 @@ body{width:1080px;height:1350px;overflow:hidden}
 .t{font-family:var(--disp);font-variant:small-caps;font-weight:400;line-height:1.04;letter-spacing:.02em;text-wrap:balance}
 .ti{font-family:var(--ital);font-style:italic;font-weight:500;line-height:1.08;text-wrap:balance}
 .cta{display:inline-block;background:linear-gradient(135deg,var(--goldl),var(--gold) 55%,#A9824C);color:var(--gd);
-  padding:16px 30px;font-size:21px;font-weight:600;letter-spacing:.26em;white-space:nowrap}
+  padding:18px 34px;font-size:28px;font-weight:700;letter-spacing:.14em;white-space:nowrap;border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,.28);text-shadow:none}
 .cta.dark{background:var(--g);color:var(--cream)}
 .pr{font-family:var(--disp);font-size:52px;filter:blur(9px);opacity:.8;line-height:1}
 .disc{border-radius:50%;background:var(--cream);display:grid;place-items:center;border:2px solid var(--gold)}
@@ -68,7 +69,7 @@ def f_masthead_top(c):
  <img class="bag" src="{c['logo']}" style="height:170px">
  <div style="flex:1;min-width:0"><div class="eb" style="color:#9C7A45">{c['eb']}</div>
   <div class="t" style="font-size:56px;color:var(--g);margin-top:8px">{c['title']}</div>
-  <div style="margin-top:14px;display:flex;gap:18px;align-items:center"><span class="cta dark" style="padding:11px 22px;font-size:18px">COMMENT “PRICE”</span><span class="idx" style="color:var(--gold)">{c['idx']}</span></div></div>
+  <div style="margin-top:14px;display:flex;gap:18px;align-items:center"><span class="cta dark">COMMENT “PRICE”</span><span class="idx" style="color:var(--gold)">{c['idx']}</span></div></div>
 </div>
 <div class="ph" style="left:0;top:270px;width:1080px;height:1080px"><img src="{c['img']}"></div></div>"""
 
@@ -81,7 +82,7 @@ def f_gallery_frame(c):
  <div class="ph" style="position:relative;width:100%;height:100%"><img src="{c['img']}"></div></div>
 <div style="position:absolute;left:60px;right:60px;top:1125px;text-align:center;color:var(--g)">
  <div class="eb" style="color:#9C7A45">{c['eb']}</div><div class="t" style="font-size:54px;margin-top:8px">{c['title']}</div>
- <div style="margin-top:16px"><span class="cta dark" style="padding:12px 26px;font-size:18px">COMMENT “PRICE”</span></div></div></div>"""
+ <div style="margin-top:16px"><span class="cta dark">COMMENT “PRICE”</span></div></div></div>"""
 
 
 def f_polaroid(c):
@@ -136,7 +137,7 @@ def f_price_tag(c):
  <div style="flex:none;width:330px;height:190px;background:var(--g);color:var(--cream);clip-path:polygon(16% 0,100% 0,100% 100%,16% 100%,0 50%);
    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;padding-left:40px;position:relative">
   <div style="position:absolute;left:44px;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:50%;background:var(--paper)"></div>
-  <div class="pr" style="font-size:44px">{c['price']}</div><div style="font-size:18px;font-weight:600;letter-spacing:.22em">COMMENT “PRICE”</div></div></div></div>"""
+  <div class="pr" style="font-size:44px">{c['price']}</div><div style="font-size:24px;font-weight:700;letter-spacing:.08em;white-space:nowrap">COMMENT “PRICE”</div></div></div></div>"""
 
 
 def f_big_number(c):
@@ -146,7 +147,7 @@ def f_big_number(c):
  <div style="font-family:var(--ital);font-size:190px;line-height:.8;color:var(--gold);flex:none">{c['num']}</div>
  <div style="flex:1;min-width:0;border-left:2px solid var(--gold);padding-left:30px"><div class="eb" style="color:#9C7A45;font-size:17px">{c['eb']}</div>
   <div class="t" style="font-size:48px;color:var(--g);margin-top:8px">{c['title']}</div>
-  <div style="margin-top:14px"><span class="cta dark" style="padding:10px 22px;font-size:17px">COMMENT “PRICE”</span></div></div>
+  <div style="margin-top:14px"><span class="cta dark">COMMENT “PRICE”</span></div></div>
  <img src="{c['logo']}" style="height:130px;flex:none"></div></div>"""
 
 
@@ -168,7 +169,7 @@ def f_minimal_white(c):
  <img src="{c['logo']}" style="height:120px;flex:none">
  <div style="flex:1;min-width:0;text-align:center"><div class="t" style="font-size:46px;color:var(--g)">{c['title']}</div>
   <div style="height:1px;background:var(--gold);margin:14px 80px"></div>
-  <div class="sp" style="color:var(--g);font-size:17px">Comment <b>“PRICE”</b> to order</div></div>
+  <div style="margin-top:6px"><span class="cta dark" style="font-size:24px;padding:14px 26px">COMMENT “PRICE”</span></div></div>
  <span class="idx" style="color:var(--gold);font-size:24px;flex:none">{c['idx']}</span></div></div>"""
 
 

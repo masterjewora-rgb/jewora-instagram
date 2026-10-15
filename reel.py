@@ -32,7 +32,7 @@ def outro(c):
     return f"""<div style="position:absolute;left:0;right:0;top:560px;display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center">
  <div class="disc" style="width:200px;height:200px"><img src="{c['logo']}"></div>
  <div class="ti" style="font-size:64px">Kaunsa pasand aaya?</div>
- <span class="cta" style="font-size:34px;padding:26px 46px">COMMENT “PRICE”</span>
+ <span class="cta" style="font-size:50px;padding:32px 64px;letter-spacing:.12em">COMMENT “PRICE”</span>
  <div class="sp" style="font-size:24px;line-height:1.6">aur hum turant DM mein<br>price + details bhejenge</div>
  <div class="eb" style="font-size:22px;margin-top:20px;color:var(--acc)">Free shipping all over India</div></div>"""
 
