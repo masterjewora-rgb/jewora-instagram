@@ -1322,3 +1322,63 @@
 5427
 9429
 9389
+{'id': '6714', 'title': 'Maroon Rishita Rajwadi Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Heritage Edit · Necklace Set', 'specs': [['Shade', 'Ruby Red'], ['Finish', 'Gold']], 'price': '2,811'}
+{'id': '6680', 'title': 'Pink Nyra Moissanite Polki Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Polki Edit · Necklace Set', 'specs': [['Stones', 'Polki'], ['Finish', 'Gold']], 'price': '5,981'}
+{'id': '3905', 'title': 'Mehr Floral Polki Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Polki Edit · Necklace Set', 'specs': [['Stones', 'Polki'], ['Finish', 'Gold']], 'price': '7,920'}
+{'id': '9776', 'title': 'Silver Necklace Set with Green and Pink', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Shade', 'Mint Green'], ['Finish', 'Silver']], 'price': '1,850'}
+{'id': '9306', 'title': 'Zara Emerald Oval Drops AD Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'Emerald'], ['Finish', 'Silver']], 'price': '1,900'}
+{'id': '6640', 'title': 'Ivory Sweta Kundan Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Kundan'], ['Finish', 'Gold']], 'price': '12,711'}
+{'id': '3158', 'title': 'Sapphire Bloom Teardrop Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Stones', 'Sapphire'], ['Finish', 'Silver']], 'price': '1,599'}
+{'id': '2095', 'title': 'Red Beaded Kundan Pendant Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Kundan'], ['Finish', 'Gold']], 'price': '2,850'}
+{'id': '3099', 'title': 'Golden Petal Mangalsutra', 'category': 'necklace_set', 'eyebrow': 'The Floral Edit · Necklace Set', 'specs': [['Shade', 'Ruby Red'], ['Finish', 'Gold']], 'price': '2,849'}
+{'id': '7012', 'title': 'Blush Royale Diamond Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'White AD'], ['Finish', 'Silver']], 'price': '5,399'}
+{'id': '5545', 'title': 'V- Shaped Rose Gold Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Everyday Edit · Necklace Set', 'specs': [['Shade', 'Light Pink'], ['Finish', 'Rose Gold']], 'price': '1,500'}
+{'id': '4245', 'title': 'Rajsi Navratna Temple Choker Set', 'category': 'necklace_set', 'eyebrow': 'The Temple Edit · Necklace Set', 'specs': [['Finish', 'Gold']], 'price': '1,499'}
+{'id': '4227', 'title': 'Noorani Blush Kundan Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Kundan'], ['Finish', 'Gold']], 'price': '1,875'}
+{'id': '3150', 'title': 'Emerald Majesty Teardrop Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Stones', 'Emerald'], ['Finish', 'Silver']], 'price': '1,299'}
+{'id': '3142', 'title': 'Amethyst Aura Square Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Shade', 'Purple/Violet'], ['Finish', 'Silver']], 'price': '1,099'}
+{'id': '2159', 'title': 'Regal Round Stone Kundan PearlLayer', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '1,995'}
+{'id': '1423', 'title': 'Pink Stone Oxidised Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Oxidised Edit · Necklace Set', 'specs': [['Shade', 'Light Pink'], ['Finish', 'Oxidized']], 'price': '4,500'}
+{'id': '3225', 'title': 'Rajwadi Maharani Pearl Temple Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Temple Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '880'}
+{'id': '9296', 'title': 'Classic Square Stone AD Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'White AD'], ['Finish', 'Mehendi Polish']], 'price': '2,200'}
+{'id': '3949', 'title': 'Emerald Ivory Vine Choker Set', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Stones', 'Emerald'], ['Finish', 'Gold']], 'price': '6,570'}
+{'id': '1562', 'title': 'Floral Cubic zirconia Rose gold Necklace', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'White AD'], ['Finish', 'Rose Gold']], 'price': '3,300'}
+{'id': '9406', 'title': 'Amethyst Twin-Drop Elegance Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Shade', 'Purple/Violet'], ['Finish', 'Silver']], 'price': '1,480'}
+{'id': '2033', 'title': 'Pastel Kundan Choker Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Kundan'], ['Finish', 'Gold']], 'price': '4,035'}
+{'id': '5278', 'title': 'Heer Heritage Choker set', 'category': 'necklace_set', 'eyebrow': 'The Heritage Edit · Necklace Set', 'specs': [['Shade', 'White'], ['Finish', 'Gold']], 'price': '2,646'}
+{'id': '3767', 'title': 'Blush Pink Kundan Pearl Ranihaar Necklace', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '4,500'}
+{'id': '3771', 'title': 'Turquoise Royale Statement Choker Set', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Shade', 'Turquoise'], ['Finish', 'Gold']], 'price': '7,830'}
+{'id': '5218', 'title': 'Floral Temple Pearl Heritage Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Temple Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '7,371'}
+{'id': '5544', 'title': 'Peacock Victorian Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Shade', 'White'], ['Finish', 'Mehendi Polish']], 'price': '1,400'}
+{'id': '9301', 'title': 'Classic AD Leaf Design Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'White AD'], ['Finish', 'Mehendi Polish']], 'price': '1,550'}
+{'id': '5244', 'title': 'Divine Lakshmi Temple Gold-Plated Necklace', 'category': 'necklace_set', 'eyebrow': 'The Temple Edit · Necklace Set', 'specs': [['Shade', 'Emerald Green'], ['Finish', 'Gold']], 'price': '4,941'}
+{'id': '3907', 'title': 'Zarmina Pearl Drop Polki Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Polki Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '8,190'}
+{'id': '2405', 'title': 'Clean Line American Diamond Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'White AD'], ['Finish', 'Silver']], 'price': '1,499'}
+{'id': '8456', 'title': 'Murali Pearl Divine Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Pearl Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '1,902'}
+{'id': '7704', 'title': 'Aabroo Oxidised Tribal Choker', 'category': 'necklace_set', 'eyebrow': 'The Oxidised Edit · Necklace Set', 'specs': [['Shade', 'Aqua Blue'], ['Finish', 'Silver']], 'price': '850'}
+{'id': '3972', 'title': 'Meher Emerald Ruby Kundan Choker Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Ruby'], ['Finish', 'Gold']], 'price': '10,180'}
+{'id': '9405', 'title': 'Emerald Leaffall Drop Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Floral Edit · Necklace Set', 'specs': [['Stones', 'Emerald'], ['Finish', 'Mehendi Polish']], 'price': '4,400'}
+{'id': '8797', 'title': 'Classic Ruby Red Cushion-Cut Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Stones', 'Ruby'], ['Finish', 'Silver']], 'price': '1,400'}
+{'id': '4041', 'title': 'Royal Kundan Pearl Floral Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '12,690'}
+{'id': '2385', 'title': 'Soft Crystal American Diamond Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'White AD'], ['Finish', 'Silver']], 'price': '3,624'}
+{'id': '9671', 'title': 'Silver-Tone CZ Butterfly Link Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'Emerald'], ['Finish', 'Silver']], 'price': '1,799'}
+{'id': '4078', 'title': 'Zivara Emerald Kundan Bridal Choker Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Emerald'], ['Finish', 'Gold']], 'price': '14,670'}
+{'id': '3035', 'title': 'Antique Gold Polki-Style Rani Haar Set', 'category': 'necklace_set', 'eyebrow': 'The Polki Edit · Necklace Set', 'specs': [['Stones', 'Polki'], ['Finish', 'Gold']], 'price': '3,049'}
+{'id': '3648', 'title': 'Rajwadi Maroon Multi-Layer Kundan Haar Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Kundan'], ['Finish', 'Gold']], 'price': '9,360'}
+{'id': '3211', 'title': 'Rajwadi Ganesha Pearl Haar Set', 'category': 'necklace_set', 'eyebrow': 'The Pearl Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '1,049'}
+{'id': '7720', 'title': 'Morvika Pearl Choker Set', 'category': 'necklace_set', 'eyebrow': 'The Pearl Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '2,000'}
+{'id': '1585', 'title': 'Classic Hasdi Necklace Set in Golden', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Finish', 'Gold']], 'price': '450'}
+{'id': '2387', 'title': 'Pure Radiance American Diamond Necklace', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'White AD'], ['Finish', 'Silver']], 'price': '2,749'}
+{'id': '6197', 'title': 'Beautiful Flower Design Fancy Style', 'category': 'necklace_set', 'eyebrow': 'The Heritage Edit · Necklace Set', 'specs': [['Shade', 'Gold'], ['Finish', 'Gold']], 'price': '700'}
+{'id': '6704', 'title': 'Multicolor Aadhira Victorian Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Signature Edit · Necklace Set', 'specs': [['Finish', 'Gold']], 'price': '6,723'}
+{'id': '6647', 'title': 'Multicolor Kusum Heritage Necklace set', 'category': 'necklace_set', 'eyebrow': 'The Heritage Edit · Necklace Set', 'specs': [['Shade', 'Emerald Green'], ['Finish', 'Gold']], 'price': '3,293'}
+{'id': '6633', 'title': 'Pink Aarya Rajwadi Antique Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Heritage Edit · Necklace Set', 'specs': [['Shade', 'Ruby Red'], ['Finish', 'Gold']], 'price': '2,050'}
+{'id': '5864', 'title': 'Rose Gold Geometric Crystal Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Everyday Edit · Necklace Set', 'specs': [['Stones', 'Crystal'], ['Finish', 'Rose Gold']], 'price': '1,900'}
+{'id': '5426', 'title': 'Royal Crystal Kundan Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Kundan'], ['Finish', 'Gold']], 'price': '7,990'}
+{'id': '6172', 'title': 'God Laxmi Ji Moti Coin Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Temple Edit · Necklace Set', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '879'}
+{'id': '429', 'title': 'Double Layered Diamond Choker Set', 'category': 'necklace_set', 'eyebrow': 'The Diamond Edit · Necklace Set', 'specs': [['Stones', 'White AD'], ['Finish', 'Gold']], 'price': '2,900'}
+{'id': '6718', 'title': 'Golden Pink Alira Rajwadi Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Heritage Edit · Necklace Set', 'specs': [['Shade', 'Ruby Red'], ['Finish', 'Gold']], 'price': '2,625'}
+{'id': '6634', 'title': 'Multicolor Aarya Rajwadi Antique Necklace', 'category': 'necklace_set', 'eyebrow': 'The Heritage Edit · Necklace Set', 'specs': [['Finish', 'Gold']], 'price': '2,050'}
+{'id': '9384', 'title': 'Royal Emerald Ruby Pearl Bridal Necklace', 'category': 'necklace_set', 'eyebrow': 'The Pearl Edit · Necklace Set', 'specs': [['Stones', 'Ruby'], ['Finish', 'Gold']], 'price': '13,000'}
+{'id': '3956', 'title': 'Crystal Bloom Kundan Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Kundan'], ['Finish', 'Gold']], 'price': '5,490'}
+{'id': '3928', 'title': 'Emerald Radiance Kundan Necklace Set', 'category': 'necklace_set', 'eyebrow': 'The Kundan Edit · Necklace Set', 'specs': [['Stones', 'Emerald'], ['Finish', 'Gold']], 'price': '6,990'}
