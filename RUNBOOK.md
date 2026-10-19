@@ -29,7 +29,7 @@ Products never repeat: every posted id is in `posted.csv`, and `plan.py` skips t
 ## Reel or carousel?
 Check the current time in India (Asia/Kolkata). Runs in the **10:xx** or **15:xx** IST hour make a **carousel**; every other run makes a **Reel**.
 (Daily 10 posts = 8 Reels + 2 carousels: 09:50 Reel, 10:50 carousel, 11:50 Reel, 12:50 Reel, 13:50 Reel, 15:50 carousel, 17:50 Reel, 18:50 Reel, 19:50 Reel, 20:50 Reel.)
-Designs: all 12 carousel formats and 12 Reel styles come from `designs.py` (Royal Emerald, Maroon Festive, Blush Editorial, Midnight Gold, Sage Botanical, Pop Bold, Lavender Glass, Navy Diagonal, Teal Stamp, Gallery Plaque, Newspaper Bold, Rose Minimal). Rules: the product photo is always shown whole with nothing on top of it, and COMMENT "PRICE" is a big bold button on every slide/frame. Keep both rules when changing designs.
+Designs: all 12 carousel formats and 12 Reel styles come from `designs.py` (Royal Emerald, Maroon Festive, Blush Editorial, Midnight Gold, Sage Botanical, Pop Bold, Lavender Glass, Navy Diagonal, Teal Stamp, Gallery Plaque, Newspaper Bold, Rose Minimal). Rules: the product photo is always shown whole with nothing on top of it, COMMENT "PRICE" is a big bold button on every slide/frame, and the tagline "India's First Unified Jewellery Marketplace" sits under it on every slide/frame (designs.TAGLINE, added in canvas()). Keep these rules when changing designs.
 
 ### Reel steps (replace steps 6–9)
 6r. `python3 reel.py ID1 ID2 ID3 ID4 ID5` (style comes from plan.json `reel_style`, rotates through 12 styles; music rotates through music/ — the user's tracks from Drive folder `1tpsn8KwB1vchgkAcREwg49Jo69r3IFpm`).

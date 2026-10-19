@@ -25,6 +25,7 @@ BUBBLE = ('<svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 2.5h16A2.5 2
           'v-4H4A2.5 2.5 0 0 1 1.5 15.5V5A2.5 2.5 0 0 1 4 2.5z"/><circle cx="7.5" cy="10.2" r="1.4" fill="{dot}"/>'
           '<circle cx="12" cy="10.2" r="1.4" fill="{dot}"/><circle cx="16.5" cy="10.2" r="1.4" fill="{dot}"/></svg>')
 CTA_TXT = "COMMENT “PRICE”"
+TAGLINE = "India’s First Unified Jewellery Marketplace"   # brand line under the CTA on every slide/frame
 
 
 def bubble(dot): return BUBBLE.replace("{dot}", dot)
@@ -421,7 +422,7 @@ D = {
                        f'<div style="position:absolute;right:-180px;top:{int(H*.55)}px;width:640px;height:640px;border-radius:50%;background:#FFC0D5;filter:blur(90px);opacity:.8"></div>',
         transition="smoothleft", motion="zin"),
     "navy_diagonal": dict(label="Navy Diagonal", card=navy_card, cta=_navy_cta, fg="#14213D", acc="#E3B85A", tf="'GFS Baskerville'",
-        bg="linear-gradient(168deg,#14213D 0 50%,#F4EFE6 50% 100%)", deco=lambda H: '', transition="wipeleft", motion="pan"),
+        bg="linear-gradient(168deg,#14213D 0 50%,#F4EFE6 50% 100%)", outro_fg="#F4EFE6", deco=lambda H: '', transition="wipeleft", motion="pan"),
     "teal_stamp": dict(label="Teal Stamp", card=stamp_card, cta=_stamp_cta, fg="#F3E9D2", acc="#F2B84B", tf="'Lora';font-style:italic",
         bg="repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 18px,transparent 18px 36px),radial-gradient(ellipse at 50% 40%,#15605F,#0B3B3B)",
         deco=lambda H: '', transition="radial", motion="zout"),
@@ -448,8 +449,10 @@ def canvas(key, H, stage_html, top, c=None):
         foot = (f'<div style="position:absolute;left:0;right:0;top:1640px;text-align:center;color:{d["acc"]}">'
                 f'<div style="font-size:26px;letter-spacing:.38em">FREE SHIPPING ACROSS INDIA</div>'
                 f'<div style="font-size:24px;letter-spacing:.2em;margin-top:14px;color:{d["fg"]};opacity:.7">@jewora_official</div></div>')
+    tag = (f'<div style="flex:none;margin-top:22px;font-family:\'Poppins\';font-weight:600;font-size:22px;letter-spacing:.2em;'
+           f'text-transform:uppercase;white-space:nowrap;color:{d["fg"]};opacity:.9">{TAGLINE}</div>')
     return (f'<div class="cv" style="height:{H}px;background:{d["bg"]};color:{d["fg"]}">{pb}{d["deco"](H)}'
-            f'<div class="stage" style="top:{top}px">{stage_html}</div>{foot}</div>')
+            f'<div class="stage" style="top:{top}px">{stage_html}{tag}</div>{foot}</div>')
 
 
 def page(body, H):
@@ -476,7 +479,7 @@ def intro(key, cs, H=1920):
 def outro(key, c, H=1920):
     d = D[key]
     st = f"""{logo(c, 170, "#F6EBDD", d['acc'])}
- <div style="font-family:{d['tf']};font-size:76px;margin:44px 40px 50px;text-align:center;line-height:1.1">Which one is your favourite?</div>
+ <div style="font-family:{d['tf']};font-size:76px;margin:44px 40px 50px;text-align:center;line-height:1.1;color:{d.get('outro_fg', d['fg'])}">Which one is your favourite?</div>
  {d['cta'](1.05)}
  <div style="font-size:30px;letter-spacing:.06em;margin-top:46px;text-align:center;line-height:1.5;opacity:.9">Comment below and we'll DM you<br>the price + details instantly</div>"""
     return canvas(key, H, st, 215)
