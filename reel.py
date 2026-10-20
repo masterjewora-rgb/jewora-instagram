@@ -9,6 +9,7 @@ from playwright.sync_api import sync_playwright
 from formats import BASE_CSS, uri_png, uri_jpg, LOGO
 from reel_styles import REEL_STYLES, THEME_CSS, esc
 import designs
+import reel_formats
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = "https://raw.githubusercontent.com/masterjewora-rgb/jewora-instagram/main/"
@@ -70,7 +71,7 @@ def build_video(frames, durs, music, out, transition, motion):
         flt.append(f"[{k}:v]{motion_filter(k, int(d * FPS), motion)},setsar=1,format=yuv420p[v{k}]")
     last, t = "v0", durs[0]
     for k in range(1, len(frames)):
-        tr = "fade" if k in (1, len(frames) - 1) else transition     # intro/outro always soft fade
+        tr = "fade" if k == len(frames) - 1 else transition     # intro/outro always soft fade
         flt.append(f"[{last}][v{k}]xfade=transition={tr}:duration={xf}:offset={t - xf:.2f}[x{k}]")
         last, t = f"x{k}", t + durs[k] - xf
     flt.append(f"[{len(frames)}:a]atrim=0:{t:.2f},afade=t=in:d=0.6,afade=t=out:st={t-1.5:.2f}:d=1.5,volume=0.9[a]")
@@ -105,22 +106,28 @@ def main():
     logo = uri_png(Image.open(LOGO))
     cs = ctxs(prods, logo)
     dcs = [dict(title=c["p"]["title"], eb=c["p"].get("eyebrow", ""), cat=c["cat"], i=c["i"], n=c["n"], img=c["img"], logo=c["logo"]) for c in cs]
-    if preview:
-        pages = [designs.page(designs.slide(k, dcs[j % len(dcs)], H), H) for j, k in enumerate(REEL_STYLES)]
-        for p in render(pages, os.path.join(HERE, "reels", "_preview"), "s"): print(p)
+    st = json.load(open(os.path.join(HERE, "state.json")))
+    nrl = st.get("reels_posted", 0)
+    if preview:   # every new format: intro + first product + outro  -> reels/_preview/<key>_NN.png
+        keys = [style] if style else reel_formats.ORDER
+        for key in keys:
+            pgs = reel_formats.build(key, dcs, nrl)[0]
+            for p in render([pgs[0], pgs[1], pgs[-1]], os.path.join(HERE, "reels", "_preview"), key + "_"): print(p)
         return
     style = style or plan["reel_style"]
-    label, layout, theme, transition, motion = REEL_STYLES[style]
+    if style in reel_formats.FORMATS:       # v3 formats: own structure, hook, timing
+        pages, durs, transition, motion, label = reel_formats.build(style, dcs, nrl)
+    else:                                   # older 12 designs (designs.py)
+        label, layout, theme, transition, motion = REEL_STYLES[style]
+        pages = ([designs.page(designs.intro(style, dcs), H)] + [designs.page(designs.slide(style, c, H), H) for c in dcs]
+                 + [designs.page(designs.outro(style, dcs[0]), H)])
+        durs = [2.2] + [2.8] * len(prods) + [2.6]
     if not music:   # rotate through the user's tracks so consecutive Reels never share a song
         tracks = sorted(glob.glob(os.path.join(HERE, "music", "*.*"))) or sorted(glob.glob(os.path.join(HERE, "music_generated", "*.*")))
-        st = json.load(open(os.path.join(HERE, "state.json")))
-        music = tracks[st.get("reels_posted", 0) % len(tracks)]
-    pages = ([designs.page(designs.intro(style, dcs), H)] + [designs.page(designs.slide(style, c, H), H) for c in dcs]
-             + [designs.page(designs.outro(style, dcs[0]), H)])
+        music = tracks[nrl % len(tracks)]
     folder = f"reels/r{plan['carousel_number']:04d}"
     out_dir = os.path.join(HERE, folder); os.makedirs(out_dir, exist_ok=True)
     frames = render(pages, os.path.join(HERE, "photos", "_frames"))
-    durs = [2.2] + [2.8] * len(prods) + [2.6]
     total = build_video(frames, durs, music, os.path.join(out_dir, "reel.mp4"), transition, motion)
     Image.open(frames[1]).convert("RGB").save(os.path.join(out_dir, "cover.jpg"), quality=90)
     json.dump({"folder": folder, "ids": a, "kind": "reel", "style": style, "music": os.path.basename(music),

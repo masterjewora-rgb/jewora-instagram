@@ -29,7 +29,11 @@ Products never repeat: every posted id is in `posted.csv`, and `plan.py` skips t
 ## Reel or carousel?
 Check the current time in India (Asia/Kolkata). Runs in the **10:xx** or **15:xx** IST hour make a **carousel**; every other run makes a **Reel**.
 (Daily 10 posts = 8 Reels + 2 carousels: 09:50 Reel, 10:50 carousel, 11:50 Reel, 12:50 Reel, 13:50 Reel, 15:50 carousel, 17:50 Reel, 18:50 Reel, 19:50 Reel, 20:50 Reel.)
-Designs: all 12 carousel formats and 12 Reel styles come from `designs.py` (Royal Emerald, Maroon Festive, Blush Editorial, Midnight Gold, Sage Botanical, Pop Bold, Lavender Glass, Navy Diagonal, Teal Stamp, Gallery Plaque, Newspaper Bold, Rose Minimal). Rules: the product photo is always shown whole with nothing on top of it, COMMENT "PRICE" is a big bold button on every slide/frame, and the tagline "India's First Unified Jewellery Marketplace" sits under it on every slide/frame (designs.TAGLINE, added in canvas()). Keep these rules when changing designs.
+Reels (since 20 Oct 2026): 10 Reel formats from `reel_formats.py`, each with its own story structure, hook line, colours and timing —
+Top 5 Countdown, Gift Guide, Chat Story, Spotlight, Progress Row, Trending Now, Occasion Guide, This or That, Mood Board, Film Strip
+(`plan.py` rotates them via `reel_styles.REEL_ORDER`; hook lines rotate with the Reel count). Do NOT bring back the "Jewora presents The X Edit" intro.
+Preview: `python3 reel.py --preview ID1..ID5` (or `--style KEY`) writes intro/first/outro stills to reels/_preview/.
+Carousels: all 12 carousel formats (and the older Reel styles) come from `designs.py` (Royal Emerald, Maroon Festive, Blush Editorial, Midnight Gold, Sage Botanical, Pop Bold, Lavender Glass, Navy Diagonal, Teal Stamp, Gallery Plaque, Newspaper Bold, Rose Minimal). Rules: the product photo is always shown whole with nothing on top of it, COMMENT "PRICE" is a big bold button on every slide/frame, and the tagline "India's First Unified Jewellery Marketplace" sits under it on every slide/frame (designs.TAGLINE, added in canvas()). Keep these rules when changing designs.
 
 ### Reel steps (replace steps 6–9)
 6r. `python3 reel.py ID1 ID2 ID3 ID4 ID5` (style comes from plan.json `reel_style`, rotates through 12 styles; music rotates through music/ — the user's tracks from Drive folder `1tpsn8KwB1vchgkAcREwg49Jo69r3IFpm`).
@@ -48,6 +52,9 @@ Designs: all 12 carousel formats and 12 Reel styles come from `designs.py` (Roya
 - A compact list of the 5 pieces, one per line with a number emoji, e.g. "1️⃣ Classic Ethnic Gold Earrings Combo" (names only, no prices).
 - Optional one-line gifting or styling tip that matches the season.
 - "👉 Swipe to find your favourite" (for a Reel: "👀 Watch till the end and pick your favourite")
+- For a Reel, match the caption's hook to the Reel format (current.json "style"): countdown → "Our top 5 …", gift_guide → gifting angle,
+  chat_story → "POV …", occasion → where to wear them, this_or_that → "Comment A or B", trending → "Trending this week", mood_board → "Saving these …",
+  spotlight/film_strip/progress_row → a fresh premium hook. Never use the word "Edit" in the hook.
 - Must include: `💬 Comment "PRICE" and we'll DM you the price + details instantly!`
 - "🚚 Free shipping across India"
 - 8–10 hashtags at the end: #Jewora #JeworaJewellery + category/theme tags (#Jhumka #KundanJewellery #FestiveJewellery #IndianJewellery #JewelleryLovers ...).

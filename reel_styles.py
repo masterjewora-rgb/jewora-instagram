@@ -132,3 +132,10 @@ from designs import D as _D, ORDER as _ORDER
 LEGACY_REEL_STYLES = REEL_STYLES
 REEL_ORDER = _ORDER[6:] + _ORDER[:6]
 REEL_STYLES = {k: (_D[k]["label"], None, None, _D[k]["transition"], _D[k]["motion"]) for k in REEL_ORDER}
+
+
+# ---- v3 (Oct 2026): 10 new Reel formats with their own story structure (reel_formats.py) lead the rotation ----
+import reel_formats as _RF
+REEL_ORDER = list(_RF.ORDER)
+for _k in _RF.ORDER:
+    REEL_STYLES[_k] = (_k, None, None, None, None)
