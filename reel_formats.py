@@ -89,11 +89,11 @@ def countdown(cs, n):
     for k, c in enumerate(cs):
         rank = len(cs) - k
         pages.append(frame(bg, "#fff", f"""
- <div style="display:flex;align-items:center;gap:30px;width:900px">
-  <div style="font-family:Inter;font-weight:900;font-size:190px;line-height:.8;color:{gold}">#{rank}</div>
+ <div style="display:flex;align-items:center;gap:26px;width:980px">
+  <div style="font-family:Inter;font-weight:900;font-size:120px;line-height:.8;color:{gold}">#{rank}</div>
   <div style="flex:1;min-width:0"><div style="font-size:22px;letter-spacing:.32em;color:#BDBDBD">{label(c)}</div>
-   <div style="font-family:Inter;font-weight:800;font-size:{fit(c['title'],52,.56,660)}px;line-height:1.1;margin-top:10px">{esc(c['title'])}</div></div></div>
- {photo(c, 800, f"margin:34px 0 34px;border-radius:24px;box-shadow:0 0 0 4px {gold},0 0 80px rgba(242,193,78,.35)")}
+   <div style="font-family:Inter;font-weight:800;font-size:{fit(c['title'],46,.56,780)}px;line-height:1.1;margin-top:6px">{esc(c['title'])}</div></div></div>
+ {photo(c, 980, f"margin:22px 0 24px;border-radius:24px;box-shadow:0 0 0 4px {gold},0 0 80px rgba(242,193,78,.35)")}
  {C()}""", gold))
     pages.append(frame(bg, "#fff", f"""
  {logo(cs[0], 170, "#fff", gold)}
@@ -114,28 +114,28 @@ def this_or_that(cs, n):
     pages = [frame(bg, ink, f"""
  <div style="font-family:Inter;font-weight:900;font-size:150px;line-height:.95;text-align:center;color:{red}">{hook}</div>
  <div style="font-family:Lora;font-style:italic;font-size:60px;margin:24px 0 50px">{cat} edition</div>
- <div style="display:flex;gap:26px;align-items:center">
-  {photo(cs[0], 400, "border-radius:28px;border:6px solid #fff")}
-  <div style="width:110px;height:110px;border-radius:50%;background:{red};color:#fff;display:grid;place-items:center;font-family:Inter;font-weight:900;font-size:44px;flex:none">VS</div>
-  {photo(cs[1], 400, "border-radius:28px;border:6px solid #fff")}</div>
+ <div style="display:flex;gap:12px;align-items:center">
+  {photo(cs[0], 450, "border-radius:28px;border:6px solid #fff")}
+  <div style="width:90px;height:90px;border-radius:50%;background:{red};color:#fff;display:grid;place-items:center;font-family:Inter;font-weight:900;font-size:38px;flex:none">VS</div>
+  {photo(cs[1], 450, "border-radius:28px;border:6px solid #fff")}</div>
  <div style="margin-top:56px">{C(.9)}</div>""", ink)]
 
     def card(c, tagtxt):
-        return f"""<div style="display:flex;flex-direction:column;align-items:center;width:470px">
+        return f"""<div style="display:flex;flex-direction:column;align-items:center;width:520px">
   <div style="font-family:Inter;font-weight:900;font-size:64px;color:{red};margin-bottom:14px">{tagtxt}</div>
-  {photo(c, 470, "border-radius:30px;border:7px solid #fff;box-shadow:0 20px 40px rgba(120,50,30,.22)")}
+  {photo(c, 520, "border-radius:30px;border:7px solid #fff;box-shadow:0 20px 40px rgba(120,50,30,.22)")}
   <div style="font-family:Poppins;font-weight:600;font-size:30px;line-height:1.2;text-align:center;margin-top:20px;height:74px;overflow:hidden">{esc(c['title'])}</div></div>"""
     pairs = [(cs[0], cs[1]), (cs[2], cs[3])]
     for a, b in pairs:
         pages.append(frame(bg, ink, f"""
  <div style="font-size:24px;letter-spacing:.34em;margin-bottom:30px">{label(a)}</div>
- <div style="display:flex;gap:40px;align-items:flex-start">{card(a, "A")}{card(b, "B")}</div>
+ <div style="display:flex;gap:16px;align-items:flex-start">{card(a, "A")}{card(b, "B")}</div>
  <div style="font-family:Lora;font-style:italic;font-size:46px;margin:34px 0 30px">Comment A or B 👇</div>
  {C()}""", ink))
     last = cs[4]
     pages.append(frame(bg, ink, f"""
  <div style="background:{red};color:#fff;font-family:Inter;font-weight:900;font-size:40px;padding:14px 34px;border-radius:999px;transform:rotate(-3deg)">BONUS PICK ✨</div>
- {photo(last, 820, "margin:34px 0 26px;border-radius:34px;border:8px solid #fff;box-shadow:0 26px 50px rgba(120,50,30,.25)")}
+ {photo(last, 980, "margin:24px 0 20px;border-radius:34px;border:8px solid #fff;box-shadow:0 26px 50px rgba(120,50,30,.25)")}
  {title_line(last['title'], "Poppins;font-weight:600", ink, 52, .55)}
  <div style="margin-top:28px">{C()}</div>""", ink))
     pages.append(frame(bg, ink, f"""
@@ -151,8 +151,8 @@ def this_or_that(cs, n):
 def film_strip(cs, n):
     bg = "#1A1714"
     amber = "#FF9F43"
-    holes = lambda: "".join('<div style="width:46px;height:30px;border-radius:6px;background:#1A1714"></div>' for _ in range(13))
-    rail = lambda side: (f'<div style="position:absolute;{side}:0;top:0;width:96px;height:{H}px;background:#2B2621;display:flex;'
+    holes = lambda: "".join('<div style="width:28px;height:22px;border-radius:6px;background:#1A1714"></div>' for _ in range(13))
+    rail = lambda side: (f'<div style="position:absolute;{side}:0;top:0;width:52px;height:{H}px;background:#2B2621;display:flex;'
                          f'flex-direction:column;align-items:center;justify-content:space-around;padding:30px 0">{holes()}</div>')
     extra = rail("left") + rail("right")
     C = lambda s=1: cta(amber, "#1A1714", amber, s, "border-radius:8px")
@@ -166,9 +166,9 @@ def film_strip(cs, n):
  <div style="margin-top:56px">{C(.9)}</div>""", amber, extra)]
     for c in cs:
         pages.append(frame(bg, "#F7EBDD", f"""
- <div style="display:flex;justify-content:space-between;width:820px;font-family:Caladea;font-size:28px;letter-spacing:.3em;color:{amber}">
+ <div style="display:flex;justify-content:space-between;width:940px;font-family:Caladea;font-size:28px;letter-spacing:.3em;color:{amber}">
   <span>SCENE {c['i']:02d}</span><span>TAKE 1</span><span>{c['i']:02d}/{c['n']:02d}</span></div>
- {photo(c, 820, "margin:24px 0 26px;border:10px solid #F7EBDD")}
+ {photo(c, 940, "margin:18px 0 20px;border:8px solid #F7EBDD")}
  <div style="font-size:22px;letter-spacing:.34em;color:#B9A996">{label(c)}</div>
  {title_line(c['title'], "Caladea;font-weight:700", "#F7EBDD", 58, .5, 820, "margin:10px 0 26px")}
  {C()}""", amber, extra))
@@ -189,13 +189,13 @@ def progress_row(cs, n):
     hook = pick(["Swipe through all 5", "5 looks, 1 vibe", "Which one is you?"], n)
     cat = plural(cs[0]["cat"])
 
-    def row(active):
+    def row(active, sz=150):
         out = []
         for x in cs:
             on = x["i"] == active
             st = (f"border:5px solid {ink};transform:translateY(-10px)" if on else "border:3px solid #fff;opacity:.55")
-            out.append(f'<div class="ph" style="width:150px;height:150px;border-radius:18px;{st}"><img src="{x["img"]}"></div>')
-        return f'<div style="display:flex;gap:16px;align-items:flex-end;height:170px">{"".join(out)}</div>'
+            out.append(f'<div class="ph" style="width:{sz}px;height:{sz}px;border-radius:{sz//8}px;{st}"><img src="{x["img"]}"></div>')
+        return f'<div style="display:flex;gap:16px;align-items:flex-end;height:{sz+20}px">{"".join(out)}</div>'
     pages = [frame(bg, ink, f"""
  {logo(cs[0], 150, "#fff", ink)}
  <div style="font-family:Poppins;font-weight:600;font-size:96px;line-height:1.05;text-align:center;margin:40px 40px 20px">{hook}</div>
@@ -204,10 +204,9 @@ def progress_row(cs, n):
  <div style="margin-top:50px">{C(.9)}</div>""", ink)]
     for c in cs:
         pages.append(frame(bg, ink, f"""
- {row(c['i'])}
- {photo(c, 800, "margin:30px 0 24px;border-radius:40px;box-shadow:0 30px 60px rgba(22,66,60,.22)")}
- {title_line(c['title'], "Poppins;font-weight:600", ink, 52, .55)}
- <div style="font-size:22px;letter-spacing:.32em;opacity:.7;margin:10px 0 24px">{label(c)}</div>
+ {row(c['i'], 96)}
+ {photo(c, 930, "margin:16px 0 18px;border-radius:40px;box-shadow:0 30px 60px rgba(22,66,60,.22)")}
+ {title_line(c['title'], "Poppins;font-weight:600", ink, 48, .55, 960, "margin-bottom:18px")}
  {C()}""", ink))
     pages.append(frame(bg, ink, f"""
  {row(0)}
@@ -240,10 +239,10 @@ def occasion(cs, n):
     for c, (o, pair) in zip(cs, occ):
         pages.append(frame(bg, "#FFF5E8", f"""
  <div style="font-size:24px;letter-spacing:.42em;color:{champ}">PERFECT FOR</div>
- <div style="font-family:Lora;font-style:italic;font-weight:600;font-size:92px;line-height:1.05;margin:8px 0 26px">{o}</div>
- {photo(c, 760, f"border-radius:380px 380px 24px 24px;border:4px solid {champ}")}
- {title_line(c['title'], "'GFS Baskerville';font-variant:small-caps", "#FFF5E8", 52, .55, 960, "margin-top:22px")}
- <div style="font-family:Lora;font-style:italic;font-size:32px;color:{champ};margin:6px 0 24px">Style it {pair}</div>
+ <div style="font-family:Lora;font-style:italic;font-weight:600;font-size:70px;line-height:1.05;margin:4px 0 16px">{o}</div>
+ {photo(c, 900, f"border-radius:28px;border:4px solid {champ}")}
+ {title_line(c['title'], "'GFS Baskerville';font-variant:small-caps", "#FFF5E8", 46, .55, 960, "margin-top:14px")}
+ <div style="font-family:Lora;font-style:italic;font-size:30px;color:{champ};margin:2px 0 16px">Style it {pair}</div>
  {C()}""", champ))
     pages.append(frame(bg, "#FFF5E8", f"""
  {logo(cs[0], 160, "#FFF5E8", champ)}
@@ -261,8 +260,8 @@ def gift_guide(cs, n):
     bg = "#FBF3E4"
     red, ink = "#B3202A", "#3D2410"
     ribbon = (f'<div style="position:absolute;left:0;right:0;top:0;height:{H}px;pointer-events:none">'
-              f'<div style="position:absolute;left:44px;top:0;width:34px;height:{H}px;background:{red};opacity:.9"></div>'
-              f'<div style="position:absolute;right:44px;top:0;width:34px;height:{H}px;background:{red};opacity:.9"></div></div>')
+              f'<div style="position:absolute;left:0;top:0;width:24px;height:{H}px;background:{red};opacity:.9"></div>'
+              f'<div style="position:absolute;right:0;top:0;width:24px;height:{H}px;background:{red};opacity:.9"></div></div>')
     C = lambda s=1: cta(red, "#fff", red, s, "border-radius:14px;box-shadow:0 14px 30px rgba(179,32,42,.3)")
     cat = plural(cs[0]["cat"])
     hook = pick([f"Gift Guide:<br>5 {cat.lower()} she'll love", f"Gifting season,<br>sorted.", f"Not sure what<br>to gift?"], n)
@@ -280,9 +279,8 @@ def gift_guide(cs, n):
     for c, w in zip(cs, who):
         pages.append(frame(bg, ink, f"""
  {tagbox(w)}
- {photo(c, 800, "margin:30px 0 26px;border:14px solid #fff;box-shadow:0 26px 50px rgba(61,36,16,.2)")}
- {title_line(c['title'], "Lora;font-weight:600", ink, 54, .5)}
- <div style="font-size:22px;letter-spacing:.32em;color:{red};margin:10px 0 24px">GIFT {c['i']:02d} OF {c['n']:02d} · GIFT-READY</div>
+ {photo(c, 940, "margin:18px 0 18px;border:12px solid #fff;box-shadow:0 26px 50px rgba(61,36,16,.2)")}
+ {title_line(c['title'], "Lora;font-weight:600", ink, 50, .5, 960, "margin-bottom:18px")}
  {C()}""", red, ribbon))
     pages.append(frame(bg, ink, f"""
  {logo(cs[0], 160, "#fff", red)}
@@ -318,11 +316,11 @@ def chat_story(cs, n):
     for k, c in enumerate(cs):
         pages.append(frame(bg, ink, f"""
  {header(c)}
- <div style="display:flex;flex-direction:column;gap:18px;width:1080px;margin-top:26px">{them(asks[k])}
-  <div style="align-self:flex-end;margin-right:60px;background:#DCF2D4;border-radius:34px 34px 8px 34px;padding:18px;display:flex;flex-direction:column;gap:12px">
-   {photo(c, 660, "border-radius:22px")}
+ <div style="display:flex;flex-direction:column;gap:14px;width:1080px;margin-top:16px">{them(asks[k])}
+  <div style="align-self:flex-end;margin-right:40px;background:#DCF2D4;border-radius:34px 34px 8px 34px;padding:14px;display:flex;flex-direction:column;gap:10px">
+   {photo(c, 800, "border-radius:22px")}
    <div style="font-family:Poppins;font-size:34px;color:{ink};padding:0 8px">{esc(REPLIES_[(n + k) % len(REPLIES_)])}</div></div></div>
- {title_line(c['title'], "Poppins;font-weight:600", ink, 44, .55, 960, "margin:22px 0 22px")}
+ <div style="height:22px"></div>
  {C()}""", green))
     pages.append(frame(bg, ink, f"""
  {header(cs[0])}
@@ -352,9 +350,9 @@ def spotlight(cs, n):
     for c in cs:
         pages.append(frame(bg, "#fff", f"""
  <div style="font-size:24px;letter-spacing:.5em;color:{neon}">★ STARRING ★</div>
- {title_line(c['title'], "Inter;font-weight:800", "#fff", 56, .58, 960, "margin:14px 0 30px")}
- {photo(c, 820, "border-radius:50%;box-shadow:0 0 0 3px rgba(255,210,122,.7),0 0 90px rgba(255,210,122,.35)")}
- <div style="font-size:22px;letter-spacing:.34em;opacity:.65;margin:28px 0 24px">{label(c)}</div>
+ {title_line(c['title'], "Inter;font-weight:800", "#fff", 50, .58, 960, "margin:10px 0 20px")}
+ {photo(c, 980, "border-radius:36px;box-shadow:0 0 0 3px rgba(255,210,122,.7),0 0 90px rgba(255,210,122,.35)")}
+ <div style="height:24px"></div>
  {C()}""", neon, light))
     pages.append(frame(bg, "#fff", f"""
  {logo(cs[0], 160, "#111", neon)}
@@ -383,12 +381,12 @@ def trending(cs, n):
  <div style="margin-top:60px">{C(.9)}</div>""", ink, extra)]
     for c in cs:
         pages.append(frame(bg, ink, f"""
- <div style="display:flex;justify-content:space-between;align-items:center;width:900px">
-  <div style="background:#fff;border:5px solid {ink};font-family:Inter;font-weight:900;font-size:36px;padding:10px 24px;transform:rotate(-3deg)">🔥 HOT PICK</div>
-  <div style="font-family:Inter;font-weight:900;font-size:80px;color:#fff;-webkit-text-stroke:3px {ink}">{c['i']:02d}</div></div>
- {photo(c, 800, f"margin:26px 0 28px;border:6px solid {ink};border-radius:30px;box-shadow:16px 16px 0 {ink}")}
- {title_line(c['title'], "Inter;font-weight:900", ink, 54, .6)}
- <div style="margin-top:26px">{C()}</div>""", ink, extra))
+ <div style="display:flex;justify-content:space-between;align-items:center;width:960px">
+  <div style="background:#fff;border:5px solid {ink};font-family:Inter;font-weight:900;font-size:32px;padding:8px 22px;transform:rotate(-3deg)">🔥 HOT PICK</div>
+  <div style="font-family:Inter;font-weight:900;font-size:64px;color:#fff;-webkit-text-stroke:3px {ink}">{c['i']:02d}</div></div>
+ {photo(c, 950, f"margin:16px 0 22px;border:6px solid {ink};border-radius:30px;box-shadow:12px 12px 0 {ink}")}
+ {title_line(c['title'], "Inter;font-weight:900", ink, 48, .6)}
+ <div style="margin-top:16px">{C()}</div>""", ink, extra))
     pages.append(frame(bg, ink, f"""
  <div style="font-family:Inter;font-weight:900;font-size:100px;line-height:1;text-align:center;color:#fff;-webkit-text-stroke:4px {ink}">DON'T MISS<br>OUT!</div>
  <div style="font-family:Inter;font-weight:800;font-size:44px;margin:40px 0 50px;text-align:center">Your next favourite is here</div>
@@ -409,7 +407,7 @@ def mood_board(cs, n):
     cat = plural(cs[0]["cat"])
     hook = pick([f"My {cat.lower()}<br>mood board", "Saving these for<br>wedding season", "Pinned: the<br>dream list 📌"], n)
     pol = lambda c, size, rot, extra="": (f'<div style="position:relative;background:#FFFDF7;padding:18px 18px 0;transform:rotate({rot}deg);box-shadow:0 18px 34px rgba(59,42,26,.3);{extra}">'
-                                          f'{photo(c, size)}<div style="height:{int(size*.14)}px"></div>{tape(int(size/2)-85+18, -24, -4)}</div>')
+                                          f'{photo(c, size)}<div style="height:{int(size*.07)}px"></div>{tape(int(size/2)-85+18, -24, -4)}</div>')
     pages = [frame(bg, ink, f"""
  <div style="font-family:Lora;font-style:italic;font-weight:600;font-size:110px;line-height:1.02;text-align:center">{hook}</div>
  <div style="position:relative;width:960px;height:640px;margin:40px 0 30px">
@@ -421,9 +419,9 @@ def mood_board(cs, n):
         rot = -2.5 if k % 2 else 2.5
         pages.append(frame(bg, ink, f"""
  <div style="font-size:24px;letter-spacing:.36em">PIN {c['i']:02d} · {label(c)}</div>
- <div style="margin:44px 0 10px">{pol(c, 760, rot)}</div>
- <div style="font-family:Lora;font-style:italic;font-size:64px;color:#8C2F1B;transform:rotate(-4deg);margin:6px 0 4px">{NOTES[(n + k) % len(NOTES)]}</div>
- {title_line(c['title'], "Lora;font-weight:600", ink, 48, .5, 960, "margin-bottom:22px")}
+ <div style="margin:34px 0 0">{pol(c, 840, rot)}</div>
+ <div style="font-family:Lora;font-style:italic;font-size:52px;color:#8C2F1B;transform:rotate(-4deg);margin:-6px 0 0">{NOTES[(n + k) % len(NOTES)]}</div>
+ {title_line(c['title'], "Lora;font-weight:600", ink, 42, .5, 960, "margin-bottom:14px")}
  {C()}""", ink))
     pages.append(frame(bg, ink, f"""
  <div style="position:relative;width:900px;height:420px;margin-bottom:40px">
