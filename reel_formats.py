@@ -228,7 +228,7 @@ def occasion(cs, n):
     champ = "#F1D3A6"
     C = lambda s=1: cta(f"linear-gradient(135deg,#FBE7C6,{champ},#D9AE78)", "#3A1532", champ, s, "border-radius:6px")
     cat = cs[0]["cat"]
-    hook = pick([f"One {cat.lower()} for<br>every occasion", f"Where will you<br>wear yours?", f"Your {cat.lower()}<br>occasion guide"], n)
+    hook = pick([f"{cat} for<br>every occasion", f"Where will you<br>wear yours?", f"Your {cat.lower()}<br>occasion guide"], n)
     occ = [OCCASIONS[(n * 3 + k) % len(OCCASIONS)] for k in range(len(cs))]
     pages = [frame(bg, "#FFF5E8", f"""
  <div style="font-size:26px;letter-spacing:.5em;color:{champ}">JEWORA · STYLE GUIDE</div>
