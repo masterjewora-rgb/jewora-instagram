@@ -1,8 +1,11 @@
 """Turn a Drive download_file_content result (sheet exported as text/csv, base64) into catalog.csv.
 Usage: python3 get_catalog.py RESULT_FILE"""
 import base64, json, os, sys
-j = json.load(open(sys.argv[1]))
-c = j["content"]
+raw = open(sys.argv[1], encoding="utf-8").read()
+try:
+    c = json.loads(raw)["content"]
+except Exception:
+    c = raw  # Drive tool may save the raw CSV directly
 try:
     data = base64.b64decode(c, validate=True).decode("utf-8")
 except Exception:
