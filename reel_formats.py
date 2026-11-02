@@ -20,6 +20,8 @@ STAGE_H = 1350
 # ------------------------------------------------------------------ helpers
 def plural(cat):
     c = cat.strip()
+    if c.lower() in ("jewellery", "jewelry", "other"):
+        return "pieces"
     if c.lower().endswith(("s", "set")) and not c.lower().endswith("set"):
         return c
     if c.lower().endswith("set"):
