@@ -4457,3 +4457,123 @@
 4822
 5677
 6958
+7117
+777
+2143
+5976
+8570
+3203
+4504
+3078
+515
+2571
+2138
+2119
+6786
+5953
+590
+3202
+2347
+2934
+7692
+4825
+5939
+6946
+6035
+2086
+9427
+4665
+2222
+6959
+5986
+8568
+2250
+1314
+5853
+3679
+2022
+6951
+5608
+2170
+6800
+3828
+587
+2024
+6961
+5978
+2805
+3734
+4120
+1468
+6105
+2199
+6037
+4602
+2168
+9237
+4663
+9232
+5983
+6185
+6777
+5957
+{'id': '845', 'title': 'Elegant Circular Ruby American Diamond', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'Ruby'], ['Finish', 'Silver']], 'price': '1,850'}
+{'id': '9245', 'title': 'BOGGUMBER Floral Clover CZ Pendant', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Gold']], 'price': '399'}
+{'id': '4661', 'title': 'Rangika Enamel Tassel Necklace', 'category': 'necklace', 'eyebrow': 'The Meenakari Edit · Necklace', 'specs': [['Finish', 'Silver']], 'price': '300'}
+{'id': '591', 'title': '925 Sterling Silver Circle Pendant', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Gold']], 'price': '2,399'}
+{'id': '9220', 'title': 'BOGGUMBER Gold-Tone Abstract Flow Pendant', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '373'}
+{'id': '2094', 'title': 'Minimal Pearl Kundan Chain Necklace', 'category': 'necklace', 'eyebrow': 'The Kundan Edit · Necklace', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '375'}
+{'id': '9243', 'title': 'BOGGUMBER Ocean Star Pendant Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '379'}
+{'id': '5988', 'title': 'Agrawal Jewels Emerald Green Crystal Halo', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Emerald'], ['Finish', 'Gold']], 'price': '600'}
+{'id': '5943', 'title': 'Silver Crystal Halo Jewellery Set,', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Crystal'], ['Finish', 'Silver']], 'price': '700'}
+{'id': '2145', 'title': 'Pearl Chain Teardrop Kundan Necklace', 'category': 'necklace', 'eyebrow': 'The Kundan Edit · Necklace', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '795'}
+{'id': '5971', 'title': 'Emerald Green Crystal Halo Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Emerald'], ['Finish', 'Silver']], 'price': '500'}
+{'id': '3821', 'title': 'Emerald Floral Polki Necklace Bridal Set', 'category': 'necklace', 'eyebrow': 'The Polki Edit · Necklace', 'specs': [['Stones', 'Emerald'], ['Finish', 'Gold']], 'price': '8,370'}
+{'id': '9223', 'title': 'BOGGUMBER Gold-Plated Black Heart Pendant', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Gold']], 'price': '301'}
+{'id': '2584', 'title': 'Rose Gold Multi Pear Diamond Necklace', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Rose Gold']], 'price': '7,392'}
+{'id': '4664', 'title': 'Pushpika Enamel Tassel Necklace', 'category': 'necklace', 'eyebrow': 'The Meenakari Edit · Necklace', 'specs': [['Finish', 'Silver']], 'price': '300'}
+{'id': '6094', 'title': 'Hey Pretty Mermaid Tail Pendant Necklace', 'category': 'necklace', 'eyebrow': 'The Floral Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '555'}
+{'id': '5443', 'title': 'GemGleam Anti-Tarnish Gold Plated White', 'category': 'necklace', 'eyebrow': 'The Meenakari Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '349'}
+{'id': '5973', 'title': 'Blue Sapphire Crystal Halo Jewellery Set,', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Sapphire'], ['Finish', 'Silver']], 'price': '800'}
+{'id': '6960', 'title': 'Iridescent Crystal Bead Gold-Tone Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Crystal'], ['Finish', 'Gold']], 'price': '425'}
+{'id': '2807', 'title': 'Handcrafted Lotus Design Necklace', 'category': 'necklace', 'eyebrow': 'The Meenakari Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '499'}
+{'id': '6101', 'title': 'Elegant Dual-Layer Gold Chain Necklace', 'category': 'necklace', 'eyebrow': 'The Pearl Edit · Necklace', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '1,700'}
+{'id': '4123', 'title': 'Blossom Elegance Enamel Necklace', 'category': 'necklace', 'eyebrow': 'The Meenakari Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '999'}
+{'id': '9460', 'title': 'Gold Plated Trending Globe inspired', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '599'}
+{'id': '6883', 'title': 'Royal Antique Gold Necklace & Earrings Set', 'category': 'necklace', 'eyebrow': 'The Heritage Edit · Necklace', 'specs': [['Shade', 'Ruby Red'], ['Finish', 'Gold']], 'price': '720'}
+{'id': '6709', 'title': 'Multicolor Malini Heritage Necklace Se', 'category': 'necklace', 'eyebrow': 'The Heritage Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '4,591'}
+{'id': '7689', 'title': 'Emerald Pearl Grace Long Necklace', 'category': 'necklace', 'eyebrow': 'The Pearl Edit · Necklace', 'specs': [['Stones', 'Emerald'], ['Finish', 'Gold']], 'price': '1,000'}
+{'id': '6803', 'title': 'Royal Kundan Heart Motif Necklace', 'category': 'necklace', 'eyebrow': 'The Kundan Edit · Necklace', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '2,660'}
+{'id': '2532', 'title': 'Rose Gold Floral Diamond Necklace & Drop', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Rose Gold']], 'price': '9,416'}
+{'id': '2198', 'title': 'Crown Jewel Bridal Choker Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '449'}
+{'id': '5717', 'title': 'Butterfly Sparkle Pendant Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Shade', 'White'], ['Finish', 'Gold']], 'price': '1,299'}
+{'id': '6092', 'title': 'Gold-Toned Charm Necklace With Pink', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Crystal'], ['Finish', 'Gold']], 'price': '555'}
+{'id': '3084', 'title': 'The Royal Chand-Bali Filigree Mala', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '3,099'}
+{'id': '1548', 'title': 'Aqua Royal Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Shade', 'Light Blue'], ['Finish', 'Silver']], 'price': '5,100'}
+{'id': '734', 'title': 'The Petal-Perfect Anti-Tarnish Necklace', 'category': 'necklace', 'eyebrow': 'The Floral Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '399'}
+{'id': '2099', 'title': 'Pearl Kundan Long Pendant Necklace', 'category': 'necklace', 'eyebrow': 'The Kundan Edit · Necklace', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '660'}
+{'id': '2947', 'title': 'Royal Kutch Heritage Triple-Layer Oxidised', 'category': 'necklace', 'eyebrow': 'The Oxidised Edit · Necklace', 'specs': [['Shade', 'Ruby Red'], ['Finish', 'Silver']], 'price': '799'}
+{'id': '3683', 'title': 'Noor Mahal Kundan Bridal Necklace', 'category': 'necklace', 'eyebrow': 'The Kundan Edit · Necklace', 'specs': [['Stones', 'Kundan'], ['Finish', 'Gold']], 'price': '15,840'}
+{'id': '2179', 'title': 'Classic Solitaire Heart Pendant Necklace', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Shade', 'Emerald Green'], ['Finish', 'Silver']], 'price': '449'}
+{'id': '5982', 'title': 'Crystal Halo Jewellery Set, Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Ruby'], ['Finish', 'Silver']], 'price': '600'}
+{'id': '6955', 'title': 'Elegant Floral Crystal Bead Minimal Chain', 'category': 'necklace', 'eyebrow': 'The Floral Edit · Necklace', 'specs': [['Stones', 'Crystal'], ['Finish', 'Gold']], 'price': '750'}
+{'id': '3196', 'title': 'Golden Blossom Crystal Necklace & Earring', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Crystal'], ['Finish', 'Silver']], 'price': '1,849'}
+{'id': '9253', 'title': 'BOGGUMBER Floral Cascade CZ Pendant', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Gold']], 'price': '499'}
+{'id': '2136', 'title': 'Layered Pearl Chain Kundan Necklace', 'category': 'necklace', 'eyebrow': 'The Kundan Edit · Necklace', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '375'}
+{'id': '9334', 'title': 'Elegant Double Heart Crystal Pendant', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Crystal'], ['Finish', 'Gold']], 'price': '399'}
+{'id': '8933', 'title': 'Elegant Gold-Plated Leaf Design', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Gold']], 'price': '300'}
+{'id': '5940', 'title': 'Elegant Diamond Tennis Necklace', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Silver']], 'price': '700'}
+{'id': '8591', 'title': 'Layered Gold Chain Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '1,299'}
+{'id': '6789', 'title': 'Minimal Marquise Halo Pendant Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Shade', 'Off White'], ['Finish', 'Gold']], 'price': '769'}
+{'id': '4597', 'title': 'Bhavdiya Double Layer White Pearl Necklace', 'category': 'necklace', 'eyebrow': 'The Pearl Edit · Necklace', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '1,250'}
+{'id': '2254', 'title': 'Regal Pearl Layered Necklace', 'category': 'necklace', 'eyebrow': 'The Pearl Edit · Necklace', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '449'}
+{'id': '3047', 'title': 'Vintage Peacock Enamel Mala', 'category': 'necklace', 'eyebrow': 'The Meenakari Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '3,249'}
+{'id': '5706', 'title': 'Golden Floral Grace Chain Necklace', 'category': 'necklace', 'eyebrow': 'The Floral Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '1,199'}
+{'id': '5967', 'title': 'Emerald Green Crystal Halo Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Emerald'], ['Finish', 'Silver']], 'price': '500'}
+{'id': '2104', 'title': 'Floral Kundan Pearl Statement Necklace', 'category': 'necklace', 'eyebrow': 'The Kundan Edit · Necklace', 'specs': [['Stones', 'Pearl'], ['Finish', 'Gold']], 'price': '485'}
+{'id': '9050', 'title': 'BOGGUMBER Rosé Bloom CZ Pendant Necklace', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Gold']], 'price': '349'}
+{'id': '6948', 'title': 'Elegant Clear Crystal Bead Gold-Tone', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Stones', 'Crystal'], ['Finish', 'Gold']], 'price': '375'}
+{'id': '2084', 'title': 'Classic White Teardrop Statement Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Shade', 'Silver'], ['Finish', 'Silver']], 'price': '2,099'}
+{'id': '9626', 'title': 'Gulnaar Multitone Necklace', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '1,599'}
+{'id': '9194', 'title': 'BOGGUMBER Gold-Plated Roman Numeral Black', 'category': 'necklace', 'eyebrow': 'The Signature Edit · Necklace', 'specs': [['Finish', 'Gold']], 'price': '333'}
+{'id': '8878', 'title': 'Elegant Gold-Plated Floral Mangalsutra', 'category': 'necklace', 'eyebrow': 'The Diamond Edit · Necklace', 'specs': [['Stones', 'White AD'], ['Finish', 'Gold']], 'price': '300'}
